@@ -1,5 +1,6 @@
 sceneSetups:
-- path: Assets/Main.unity
+- path: /Users/benjaminwong 1/Library/Mobile Documents/com~apple~CloudDocs/.Trash/Seoul
+    Knight/Assets/Main.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
