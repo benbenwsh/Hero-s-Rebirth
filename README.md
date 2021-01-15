@@ -8,7 +8,5 @@ Dungeon crawler game (something like Soul Knight)
 * Hiroshi -- Assets and making pixel arts
 
 ## Game Theme / Storyline
-1.	Post-apocalyptic world dominated by robots. The main character’s family was killed by robots. Therefore, he wants to take revenge by destroying as many robots as possible, whilst upgrading his weapons to make himself stronger.
-2.	Zombie apocalypse (Same as 1 but zombies instead of robots)
-3.	Medieval age. A wizard is being exiled from his kingdom as he possesses supernatural powers. He wants to seek revenge by attacking the kingdom and stealing their treasure.
 
+A knight has been killed in battle and in his final moments he dreams of his life. But, as death approaches, he starts to see things he doesn't remember, and his memory starts to fight back. Enemies appear, and the dreams get increasingly labyrinthine.
