@@ -1,5 +1,5 @@
 # Seoul Knight
-Dungeon crawler game (something like Soul Knight)
+Rogue-like Dungeon crawler game
 
 ## Roles
 * Ben -- Scripting and Designing environment
