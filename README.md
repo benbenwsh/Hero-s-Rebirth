@@ -1,5 +1,5 @@
 # Seoul Knight
-Dungeon crawler game (something like Soul Knight)
+Rogue-like Dungeon crawler game
 
 ## Roles
 * Ben -- Scripting and Designing environment
@@ -7,4 +7,8 @@ Dungeon crawler game (something like Soul Knight)
 * Bella -- Enemies (A* algorithm), Animations
 * Hiroshi -- Assets and making pixel arts
 
-## Plan
+## Game Theme / Storyline
+
+A knight has been killed in battle and in his final moments he dreams of his life. But, as death approaches, he starts to see things he doesn't remember, and his memory starts to fight back. Enemies appear, and the dreams get increasingly labyrinthine.
+
+The first level presents our hero in the house where he was born. 
