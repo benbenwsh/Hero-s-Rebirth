@@ -1,7 +1,8 @@
 ﻿<Properties StartupConfiguration="{B5F0B553-A3D7-D8B5-83FC-15CC5497BE5D}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerCombat.cs">
     <Files>
-      <File FileName="Assets/PlayerMovement.cs" Line="30" Column="1" />
+      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="23" Column="30" />
+      <File FileName="Assets/PlayerCombat.cs" Line="29" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -9,7 +10,7 @@
           <Node name="Seoul Knight" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="PlayerMovement.cs" selected="True" />
+                <Node name="PlayerCombat.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -19,7 +20,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="28105e9f-8efe-414e-81d9-fb64b4e16c07" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b89bf587-7ea6-4c56-85f9-24277f5f646a" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

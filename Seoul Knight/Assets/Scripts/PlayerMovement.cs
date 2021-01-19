@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
+    
 
 
 
@@ -36,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-        
+
     }
 
 
