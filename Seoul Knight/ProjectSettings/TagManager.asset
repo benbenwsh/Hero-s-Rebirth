@@ -44,6 +44,9 @@ TagManager:
   - name: Obstacles
     uniqueID: 47384985
     locked: 0
+  - name: Corners
+    uniqueID: 782420755
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

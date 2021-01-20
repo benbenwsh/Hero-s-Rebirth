@@ -1,11 +1,2 @@
 Base path: '/Users/benjaminwong 1/Desktop/Unity/Hub/Editor/2019.4.17f1/Unity.app/Contents', plugins path '/Users/benjaminwong 1/Desktop/Unity/Hub/Editor/2019.4.17f1/Unity.app/Contents/PlaybackEngines'
 Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: preprocess
-  insize=1495 outsize=207 ok=1
-Cmd: preprocessCompute
-  insize=1953 outsize=1957 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=1957 outsize=1995 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=1995 outsize=3373 ok=1

@@ -63,13 +63,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Hero Knight - Pixel Art\ColorSwap\ColorSwap_HeroKnight.cs" />
-    <Compile Include="Assets\Hero Knight - Pixel Art\Demo\DestroyEvent_HeroKnight.cs" />
-    <Compile Include="Assets\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
-    <Compile Include="Assets\Hero Knight - Pixel Art\Demo\Sensor_HeroKnight.cs" />
+    <Compile Include="Assets\Scripts\Behaviour.cs" />
+    <Compile Include="Assets\Scripts\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\PlayerCombat.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-    <None Include="Assets\Hero Knight - Pixel Art\ColorSwap\Sprites-ColorSwap.shader" />
     <Reference Include="UnityEngine">
       <HintPath>/Users/benjaminwong 1/Desktop/Unity/Hub/Editor/2019.4.17f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -604,6 +601,9 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/benjaminwong 1/Desktop/GitHub/Seoul-Knight/Seoul Knight/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>/Users/benjaminwong 1/Desktop/GitHub/Seoul-Knight/Seoul Knight/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Animation.Runtime">
       <HintPath>/Users/benjaminwong 1/Desktop/GitHub/Seoul-Knight/Seoul Knight/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
     </Reference>
@@ -667,6 +667,9 @@
     <Reference Include="Unity.2D.Animation.Editor">
       <HintPath>/Users/benjaminwong 1/Desktop/GitHub/Seoul-Knight/Seoul Knight/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>/Users/benjaminwong 1/Desktop/GitHub/Seoul-Knight/Seoul Knight/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Mathematics.Editor">
       <HintPath>/Users/benjaminwong 1/Desktop/GitHub/Seoul-Knight/Seoul Knight/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
@@ -681,12 +684,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>/Users/benjaminwong 1/Desktop/GitHub/Seoul-Knight/Seoul Knight/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Cinemachine">
-      <HintPath>/Users/benjaminwong 1/Desktop/GitHub/Seoul-Knight/Seoul Knight/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>/Users/benjaminwong 1/Desktop/GitHub/Seoul-Knight/Seoul Knight/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>

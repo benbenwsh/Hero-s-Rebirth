@@ -1,8 +1,9 @@
 ﻿<Properties StartupConfiguration="{B5F0B553-A3D7-D8B5-83FC-15CC5497BE5D}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerCombat.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Behaviour.cs">
     <Files>
       <File FileName="Assets/Scripts/PlayerMovement.cs" Line="23" Column="30" />
-      <File FileName="Assets/PlayerCombat.cs" Line="29" Column="1" />
+      <File FileName="Assets/Scripts/EnemyAI.cs" Line="90" Column="2" />
+      <File FileName="Assets/Scripts/Behaviour.cs" Line="148" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -10,7 +11,7 @@
           <Node name="Seoul Knight" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="PlayerCombat.cs" selected="True" />
+                <Node name="Behaviour.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -20,7 +21,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b89bf587-7ea6-4c56-85f9-24277f5f646a" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="35ff66e1-bf5f-4eb5-8a1d-1ff30cd2aa36" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
