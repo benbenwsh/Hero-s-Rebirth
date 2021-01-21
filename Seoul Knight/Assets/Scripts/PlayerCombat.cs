@@ -16,13 +16,20 @@ public class PlayerCombat : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            animator.SetBool("Attack", true);
             Attack();
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            animator.SetBool("Attack", false);
+
         }
     }
 
     void Attack()
     {
-        animator.SetTrigger("Attack_Melee");
-
+        Debug.Log("hello");
     }
+
 }
