@@ -3,9 +3,9 @@ Rogue-like Dungeon crawler game
 
 ## Roles
 * Ben -- Design the map, player(movement, animation, weapons, collisions), Camera controller, Obstacles and put together everyone's code
-* Jad -- Storyline, Music and sound effects
-* Bella -- Enemies (A* algorithm), Animations
-* Hiroshi -- Assets and making pixel arts
+* Jad -- Epig poggers storyline, Epic title screen, Music and sound effects
+* Bella -- Enemies (A* pathfinding algorithm, movement, animation), UI
+* Hiroshi -- Assets, randomly spawning enemies
 
 ## Game Theme / Storyline
 
