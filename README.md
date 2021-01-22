@@ -2,7 +2,7 @@
 Rogue-like Dungeon crawler game
 
 ## Roles
-* Ben -- Scripting and Designing environment
+* Ben -- Design the map, player(movement, animation, weapons, collisions), Camera controller, Obstacles and put together everyone's code
 * Jad -- Storyline, Music and sound effects
 * Bella -- Enemies (A* algorithm), Animations
 * Hiroshi -- Assets and making pixel arts
