@@ -21,7 +21,9 @@ public class Room : MonoBehaviour
     {
         RoomController.instance.RegisterRoom(this);
 
+
         obstaclesTilemap.SetTile(new Vector3Int(0, 0, 0), wallHorizontal);
+
        
         TileBase[] nullArray = {null, null, null, null, null, null};
         obstaclesTilemap.SetTilesBlock(new BoundsInt(new Vector3Int(0, 5, 0), new Vector3Int(3, 2, 1)), nullArray);

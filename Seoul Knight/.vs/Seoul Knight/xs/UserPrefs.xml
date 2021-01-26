@@ -1,12 +1,12 @@
 ﻿<Properties StartupConfiguration="{B5F0B553-A3D7-D8B5-83FC-15CC5497BE5D}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Room.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/RoomController.cs">
     <Files>
       <File FileName="Assets/Scripts/PlayerMovement.cs" Line="23" Column="30" />
-      <File FileName="Assets/Scripts/Behaviour.cs" Line="15" Column="1" />
+      <File FileName="Assets/Scripts/Behaviour.cs" />
       <File FileName="Assets/Scripts/PlayerCombat.cs" Line="32" Column="28" />
-      <File FileName="Assets/Scripts/EnemyController.cs" Line="18" Column="46" />
-      <File FileName="Assets/Scripts/RoomController.cs" Line="109" Column="6" />
-      <File FileName="Assets/Scripts/Room.cs" Line="37" Column="2" />
+      <File FileName="Assets/Scripts/EnemyController.cs" Line="32" Column="79" />
+      <File FileName="Assets/Scripts/RoomController.cs" Line="55" Column="6" />
+      <File FileName="Assets/Scripts/Room.cs" Line="28" Column="45" />
       <File FileName="Assets/Scripts/RoomControllerScrap.cs" Line="168" Column="8" />
     </Files>
     <Pads>
@@ -14,7 +14,9 @@
         <State name="__root__">
           <Node name="Seoul Knight" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True" />
+              <Node name="Scripts" expanded="True">
+                <Node name="RoomController.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -23,7 +25,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6736a866-8584-43b9-a7a3-16cd4db7b5ce" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a6309620-5d7c-4ee3-8f59-e0489f7e527f" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
