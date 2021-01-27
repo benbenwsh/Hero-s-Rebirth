@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using System;
 
 public class Room : MonoBehaviour
 {
     public string type;
     public int x;
     public int y;
+    public int width;
+    public int height;
 
     public Tile wallHorizontal;
     public Tile wallHorizontalTop;
@@ -21,19 +24,51 @@ public class Room : MonoBehaviour
     {
         RoomController.instance.RegisterRoom(this);
 
+        List<(int, int)> doorPositions = RoomController.instance.doorLocations[(x, y)];
 
-        obstaclesTilemap.SetTile(new Vector3Int(0, 0, 0), wallHorizontal);
+        
+        foreach ((int, int) doorPosition in doorPositions)
+        {
 
-       
-        TileBase[] nullArray = {null, null, null, null, null, null};
-        obstaclesTilemap.SetTilesBlock(new BoundsInt(new Vector3Int(0, 5, 0), new Vector3Int(3, 2, 1)), nullArray);
+            (int, int) direction = (doorPosition.Item1 - x, doorPosition.Item2 - y);
+            TileBase[] nullArray = { null, null, null };
+
+            if (direction == (0, 1))
+            {
+                Vector3Int doorPositionVector = new Vector3Int(-1, (height - 1) / 2, 0);
+                Vector3Int doorSize = new Vector3Int(3, 1, 1);
+                obstaclesTilemap.SetTilesBlock(new BoundsInt(doorPositionVector, doorSize), nullArray);
+                Debug.Log((x, y).ToString() + doorPositionVector.ToString());
+            }
+            else if (direction == (0, -1))
+            {
+                Vector3Int doorPositionVector = new Vector3Int(-1, -(height - 1) / 2, 0);
+                Vector3Int doorSize = new Vector3Int(3, 1, 1);
+                obstaclesTilemap.SetTilesBlock(new BoundsInt(doorPositionVector, doorSize), nullArray);
+                Debug.Log((x, y).ToString() + doorPositionVector.ToString());
+            }
+            else if (direction == (1, 0))
+            {
+                Vector3Int doorPositionVector = new Vector3Int((width - 1) / 2, -1, 0);
+                Vector3Int doorSize = new Vector3Int(1, 3, 1);
+                obstaclesTilemap.SetTilesBlock(new BoundsInt(doorPositionVector, doorSize), nullArray);
+                Debug.Log((x, y).ToString() + doorPositionVector.ToString());
+            }
+            else if (direction == (-1, 0))
+            {
+                Vector3Int doorPositionVector = new Vector3Int(-(width - 1) / 2, -1, 0);
+                Vector3Int doorSize = new Vector3Int(1, 3, 1);
+                obstaclesTilemap.SetTilesBlock(new BoundsInt(doorPositionVector, doorSize), nullArray);
+                Debug.Log((x, y).ToString() + doorPositionVector.ToString());
+            }
 
 
 
-    }
+                
+            
 
-    public Vector3 GetRoomCentre()
-    {
-        return new Vector3(x * 11, y * 14);
+            
+        }
+
     }
 }

@@ -39,14 +39,14 @@ public class RoomController : MonoBehaviour
         }
 
         GenerateDoorLocations();
-        foreach (var door in doorLocations)
-        {
-            foreach (var neighbour in door.Value)
-            {
-                Debug.Log(door.Key + neighbour.ToString());
-            }
+        //foreach (var door in doorLocations)
+        //{
+        //    foreach (var neighbour in door.Value)
+        //    {
+        //        Debug.Log(door.Key + neighbour.ToString());
+        //    }
 
-        }
+        //}
     }
 
 
@@ -78,7 +78,7 @@ public class RoomController : MonoBehaviour
         {
             Debug.Log(roomCoordinates[i] + roomTypes[i]);
         }
-        
+
 
     }
 
@@ -150,7 +150,7 @@ public class RoomController : MonoBehaviour
 
     IEnumerator loadRoomRoutine()
     {
-        AsyncOperation loadRoom = SceneManager.LoadSceneAsync("Start", LoadSceneMode.Additive);
+        AsyncOperation loadRoom = SceneManager.LoadSceneAsync("Start (Test)", LoadSceneMode.Additive);
         
         while (loadRoom.isDone == false)
         {
@@ -160,7 +160,7 @@ public class RoomController : MonoBehaviour
 
     public void RegisterRoom(Room room)
     {
-        room.transform.position = new Vector3(roomCoordinates[0].Item1 * 11, roomCoordinates[0].Item2 * 14, 0);
+        room.transform.position = new Vector3(roomCoordinates[0].Item1 * room.width, roomCoordinates[0].Item2 * room.height, 0);
 
         room.x = roomCoordinates[0].Item1;
         room.y = roomCoordinates[0].Item2;
