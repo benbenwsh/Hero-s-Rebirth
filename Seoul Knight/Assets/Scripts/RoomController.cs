@@ -3,11 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//public class RoomInfo
-//{
-//    public string type;
-//    public (int, int) coordinates;
-//}
 
 public class RoomController : MonoBehaviour
 {
@@ -16,11 +11,17 @@ public class RoomController : MonoBehaviour
     public int noOfCombatRooms;
     private (int, int)[] directions = { (0, 1), (1, 0), (0, -1), (-1, 0) };
 
+    public int width;
+    public int height;
+
     public List<(int, int)> roomCoordinates = new List<(int, int)>();
     public List<string> roomTypes = new List<string>();
     public Dictionary<(int, int), List<(int, int)>> doorLocations = new Dictionary<(int, int), List<(int, int)>>();
     private (int, int) roomToExitRoom;
+    
+    public Vector2 currentRoomCoordinates = new Vector2(0, 0);
 
+    
 
 
     private void Awake()
@@ -39,19 +40,11 @@ public class RoomController : MonoBehaviour
         }
 
         GenerateDoorLocations();
-        //foreach (var door in doorLocations)
-        //{
-        //    foreach (var neighbour in door.Value)
-        //    {
-        //        Debug.Log(door.Key + neighbour.ToString());
-        //    }
-
-        //}
     }
 
 
 
-    void RoomSpawner()
+    private void RoomSpawner()
     {
         roomTypes.Add("Start");
         roomCoordinates.Add((0, 0));
@@ -74,17 +67,17 @@ public class RoomController : MonoBehaviour
         // Creating special room
         GeneratePossibleRooms(1, noOfCombatRooms, "Special");
 
-        for (int i = 0; i < 5; i++)
-        {
-            Debug.Log(roomCoordinates[i] + roomTypes[i]);
-        }
+        //for (int i = 0; i < 5; i++)
+        //{
+        //    Debug.Log(roomCoordinates[i] + roomTypes[i]);
+        //}
 
 
     }
 
 
 
-    void GenerateDoorLocations()
+    private void GenerateDoorLocations()
     {
         for (int i = 0; i < roomCoordinates.Count; i++)
         {
@@ -120,7 +113,7 @@ public class RoomController : MonoBehaviour
 
 
 
-    void GeneratePossibleRooms(int firstRoomIndex, int noOfRoomsToCheck, string roomType)
+    private void GeneratePossibleRooms(int firstRoomIndex, int noOfRoomsToCheck, string roomType)
     {
         List<(int, int)> possibleRooms = new List<(int, int)>();
 
@@ -160,7 +153,7 @@ public class RoomController : MonoBehaviour
 
     public void RegisterRoom(Room room)
     {
-        room.transform.position = new Vector3(roomCoordinates[0].Item1 * room.width, roomCoordinates[0].Item2 * room.height, 0);
+        room.transform.position = new Vector3(roomCoordinates[0].Item1 * width * 2, roomCoordinates[0].Item2 * height * 2, 0);
 
         room.x = roomCoordinates[0].Item1;
         room.y = roomCoordinates[0].Item2;
