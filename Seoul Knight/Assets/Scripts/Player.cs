@@ -11,12 +11,6 @@ public class Player : MonoBehaviour
 
     Vector2 movement;
 
-    public LayerMask enemyLayers;
-
-    private RoomController roomController;
-
-
-
     // Update is called once per frame
     void Update()
     {
@@ -34,6 +28,9 @@ public class Player : MonoBehaviour
             transform.localScale = new Vector3(1, 1, 1);
         }
 
+
+
+        //  Attack animation
         if (Input.GetKeyDown(KeyCode.Space))
         {
             animator.SetBool("Attack", true);
@@ -43,22 +40,24 @@ public class Player : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             animator.SetBool("Attack", false);
-
         }
-
-
     }
+
+
 
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-
     }
+
+
 
     void Attack()
     {
 
     }
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -108,5 +107,4 @@ public class Player : MonoBehaviour
             transform.position = newPlayerPosition;
         }
     }
-
 }

@@ -7,8 +7,7 @@ using System;
 public class Room : MonoBehaviour
 {
     public string type;
-    public int x;
-    public int y;
+    public Vector2 coordinates;
     
 
     public Tile wallRight;
@@ -25,17 +24,17 @@ public class Room : MonoBehaviour
     void Start()
     {
         RoomController.instance.RegisterRoom(this);
-
-        List<(int, int)> doorPositions = RoomController.instance.doorLocations[(x, y)];
+        
+        List<Vector2> doorPositions = RoomController.instance.doorLocations[coordinates];
         int width = RoomController.instance.width;
         int height = RoomController.instance.height;
         
-        foreach ((int, int) doorPosition in doorPositions)
+        foreach (Vector2 doorPosition in doorPositions)
         {
-            (int, int) direction = (doorPosition.Item1 - x, doorPosition.Item2 - y);
+            Vector2 direction = doorPosition - coordinates;
             TileBase[] nullArray = { null, null, null };
 
-            if (direction == (0, 1))
+            if (direction == Vector2.up)
             {
                 Vector3Int obstaclesVector = new Vector3Int(-2, height / 2 - 1, 0);
                 Vector3Int obstaclesSize = new Vector3Int(5, 2, 1);
@@ -43,7 +42,7 @@ public class Room : MonoBehaviour
                 obstaclesTilemap.SetTilesBlock(new BoundsInt(obstaclesVector, obstaclesSize), tiles);
 
             }
-            else if (direction == (0, -1))
+            else if (direction == Vector2.down)
             {
                 Vector3Int doorPositionVector = new Vector3Int(-2, -height / 2 + 1, 0);
                 Vector3Int doorSize = new Vector3Int(5, 1, 1);
@@ -58,7 +57,7 @@ public class Room : MonoBehaviour
                 aboveObstaclesTilemap.SetTilesBlock(new BoundsInt(aboveObstaclesVector, aboveObstaclesSize), wallTopTiles);
 
             }
-            else if (direction == (1, 0))
+            else if (direction == Vector2.right)
             {
                 Vector3Int doorPositionVector = new Vector3Int((width - 1) / 2, -1, 0);
                 Vector3Int doorSize = new Vector3Int(1, 4, 1);
@@ -67,7 +66,7 @@ public class Room : MonoBehaviour
                 obstaclesTilemap.SetTilesBlock(new BoundsInt(doorPositionVector, doorSize), tiles);
                 
             }
-            else if (direction == (-1, 0))
+            else if (direction == Vector2.left)
             {
                 Vector3Int doorPositionVector = new Vector3Int(-(width - 1) / 2, -1, 0);
                 Vector3Int doorSize = new Vector3Int(1, 4, 1);
