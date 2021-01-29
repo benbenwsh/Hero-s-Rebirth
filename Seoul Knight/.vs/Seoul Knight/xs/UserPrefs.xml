@@ -1,30 +1,25 @@
 ﻿<Properties StartupConfiguration="{B5F0B553-A3D7-D8B5-83FC-15CC5497BE5D}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnemyController.cs">
     <Files>
       <File FileName="Assets/Scripts/Behaviour.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/RoomController.cs" Line="72" Column="15" />
-      <File FileName="Assets/Scripts/Room.cs" />
-      <File FileName="Assets/Scripts/Player.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Enemy.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/RoomController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Room.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Player.cs" Line="115" Column="46" />
+      <File FileName="Assets/Scripts/Enemy.cs" Line="32" Column="73" />
+      <File FileName="Assets/EnemyAI.cs" Line="83" Column="56" />
       <File FileName="Assets/Scripts/EnemySpawner.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Seoul Knight" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="Player.cs" selected="True" />
-              </Node>
-            </Node>
-          </Node>
+          <Node name="Seoul Knight" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="834e0588-188c-4dea-a592-98e28be7884a" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="99bf28b2-8004-40ee-9821-072e7fc038a3" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

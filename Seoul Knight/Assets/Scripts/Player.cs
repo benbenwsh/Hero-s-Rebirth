@@ -9,6 +9,10 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
 
+    private bool attacking = false;
+
+    private int damage = 1;
+
     Vector2 movement;
 
     // Update is called once per frame
@@ -28,18 +32,18 @@ public class Player : MonoBehaviour
             transform.localScale = new Vector3(1, 1, 1);
         }
 
-
+        
 
         //  Attack animation
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            animator.SetBool("Attack", true);
             Attack();
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
             animator.SetBool("Attack", false);
+            attacking = false;
         }
     }
 
@@ -54,14 +58,15 @@ public class Player : MonoBehaviour
 
     void Attack()
     {
-
+        animator.SetBool("Attack", true);
+        attacking = true;
     }
 
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        Debug.Log(collision.gameObject.name);
         if (collision.gameObject.layer == LayerMask.NameToLayer("Door"))
         {
             Vector2 collisionCoordinates = collision.ClosestPoint(transform.position);
@@ -105,6 +110,19 @@ public class Player : MonoBehaviour
             }
 
             transform.position = newPlayerPosition;
+
         }
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            if (attacking)
+            {
+                Vector2 knockback = collision.transform.position - transform.position;
+                knockback = knockback.normalized;
+
+                collision.GetComponent<EnemyController>().TakeDamage(damage, knockback);
+            }
+            
+        }
+        
     }
 }
