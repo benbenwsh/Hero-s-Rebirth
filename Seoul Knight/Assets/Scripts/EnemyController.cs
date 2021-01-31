@@ -8,7 +8,8 @@ public class EnemyController: MonoBehaviour
     public Material material;
     public SpriteRenderer sprite;
     //public Animator animator;
-    public int hp = 2;
+    private int hp = 5;
+    private bool invincible = false;
 
 
     private Color materialTintColour;
@@ -27,48 +28,55 @@ public class EnemyController: MonoBehaviour
 
     public void TakeDamage(int damage, Vector2 knockback)
     {
-        hp -= damage;
-
-        if (hp > 0)
+        if (!invincible)
         {
-            StartCoroutine(takeDamageAnimation());
-            knockback *= 5;
-            rb.AddForce(knockback, ForceMode2D.Impulse);
-        }
-        else
-        {
-            //  Die
-            isDead = true;
-            enemyAI.CancelInvoke();
-            knockback *= 20;
-            rb.AddForce(knockback, ForceMode2D.Impulse);
+            hp -= damage;
 
-            if (enemyDirection == "Right")
+            if (hp > 0)
             {
-                transform.rotation = Quaternion.Euler(Vector3.forward * 90);
+                StartCoroutine(takeDamageAnimation());
+                knockback *= 5;
+                rb.AddForce(knockback, ForceMode2D.Impulse);
             }
             else
             {
-                transform.rotation = Quaternion.Euler(Vector3.back * 90);
-            }
-            
+                //  Die
+                isDead = true;
+                enemyAI.CancelInvoke();
+                knockback *= 20;
+                rb.AddForce(knockback, ForceMode2D.Impulse);
 
-            sprite.color = new Color(0.25f, 0.25f, 0.25f, 1);
-            gameObject.layer = LayerMask.NameToLayer("Dead Enemy");
+                if (enemyDirection == "Right")
+                {
+                    transform.rotation = Quaternion.Euler(Vector3.forward * 90);
+                }
+                else
+                {
+                    transform.rotation = Quaternion.Euler(Vector3.back * 90);
+                }
+
+
+                sprite.color = new Color(0.25f, 0.25f, 0.25f, 1);
+                gameObject.layer = LayerMask.NameToLayer("Dead Enemy");
+            }
         }
+        
     }
 
     IEnumerator takeDamageAnimation()
     {
+        invincible = true;
         materialTintColour = new Color(255, 255, 255, 255);
         material.SetColor("_Tint", materialTintColour);
 
         
         yield return new WaitForSeconds(0.05f);
 
+        invincible = false;
         materialTintColour = new Color(255, 255, 255, 0);
         material.SetColor("_Tint", materialTintColour);
     }
+
 
 
 }

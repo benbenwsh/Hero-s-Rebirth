@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Room.cs" />
     <Compile Include="Assets\Scripts\RoomController.cs" />
     <Compile Include="Assets\Scripts\RoomControllerScrap.cs" />
+    <Compile Include="Assets\Scripts\WeaponController.cs" />
     <Reference Include="UnityEngine">
       <HintPath>/Users/benjaminwong 1/Desktop/Unity/Hub/Editor/2019.4.17f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

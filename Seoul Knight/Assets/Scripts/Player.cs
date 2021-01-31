@@ -8,9 +8,9 @@ public class Player : MonoBehaviour
 
     public Rigidbody2D rb;
     public Animator animator;
-
-    private bool attacking = false;
-
+    public Animator weaponAnimator;
+    public bool attacking = false;
+    public bool facingRight = true;
     private int damage = 1;
 
     Vector2 movement;
@@ -24,26 +24,13 @@ public class Player : MonoBehaviour
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Speed", movement.sqrMagnitude);
 
-        if (movement.x < 0) {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
-        else if (movement.x > 0)
-        {
+
+        if (facingRight) {
             transform.localScale = new Vector3(1, 1, 1);
         }
-
-        
-
-        //  Attack animation
-        if (Input.GetKeyDown(KeyCode.Space))
+        else
         {
-            Attack();
-        }
-
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            animator.SetBool("Attack", false);
-            attacking = false;
+            transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 
@@ -52,14 +39,6 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-    }
-
-
-
-    void Attack()
-    {
-        animator.SetBool("Attack", true);
-        attacking = true;
     }
 
 
@@ -76,6 +55,7 @@ public class Player : MonoBehaviour
             
             Vector3 newPlayerPosition;
             Debug.Log(collisionCoordinates - currentRoomCoordinates * new Vector2(width, height) * 2);
+
             //  Right door
             if (collisionCoordinates.x - currentRoomCoordinates.x * width * 2 > 3)
             {
@@ -110,19 +90,32 @@ public class Player : MonoBehaviour
             }
 
             transform.position = newPlayerPosition;
-
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            if (attacking)
-            {
-                Vector2 knockback = collision.transform.position - transform.position;
-                knockback = knockback.normalized;
+            AttackEnemy(collision);
 
-                collision.GetComponent<EnemyController>().TakeDamage(damage, knockback);
-            }
-            
         }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
         
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+
+            AttackEnemy(collision);
+        }
+    }
+
+    private void AttackEnemy(Collider2D collision)
+    {
+        if (weaponAnimator.GetCurrentAnimatorStateInfo(0).IsName("Weapon_Attack"))
+        {
+            Vector2 knockback = collision.transform.position - transform.position;
+            knockback = knockback.normalized;
+
+            collision.GetComponent<EnemyController>().TakeDamage(damage, knockback);
+        }
     }
 }
