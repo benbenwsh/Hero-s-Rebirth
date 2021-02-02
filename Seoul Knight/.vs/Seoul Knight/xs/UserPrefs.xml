@@ -1,26 +1,34 @@
 ﻿<Properties StartupConfiguration="{B5F0B553-A3D7-D8B5-83FC-15CC5497BE5D}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/RoomController.cs">
     <Files>
       <File FileName="Assets/Scripts/Behaviour.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/RoomController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Room.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Enemy.cs" Line="38" Column="31" />
-      <File FileName="Assets/EnemyAI.cs" Line="19" Column="35" />
-      <File FileName="Assets/Scripts/EnemySpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Player.cs" Line="65" Column="68" />
-      <File FileName="Assets/Scripts/WeaponController.cs" Line="32" Column="38" />
+      <File FileName="Assets/Scripts/RoomController.cs" Line="30" Column="6" />
+      <File FileName="Assets/Scripts/Room.cs" Line="9" Column="23" />
+      <File FileName="Assets/Scripts/EnemySpawner.cs" Line="56" Column="6" />
+      <File FileName="Assets/Scripts/Player.cs" />
+      <File FileName="Assets/Scripts/WeaponController.cs" />
+      <File FileName="Assets/Scripts/MainMenu.cs" Line="9" Column="5" />
+      <File FileName="Assets/Scripts/OptionsMenu.cs" />
+      <File FileName="Assets/Scripts/EnemyController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/EnemyAI.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Seoul Knight" expanded="True" selected="True" />
+          <Node name="Seoul Knight" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="RoomController.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="99bf28b2-8004-40ee-9821-072e7fc038a3" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8478a947-0164-49b5-a233-cae71cbb19e5" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

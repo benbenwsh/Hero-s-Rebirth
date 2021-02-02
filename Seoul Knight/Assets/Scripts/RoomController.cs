@@ -14,8 +14,8 @@ public class RoomController : MonoBehaviour
 
     private Vector2[] directions = { Vector2.up, Vector2.right, Vector2.down, Vector2.left };
 
-    private List<Vector2> roomCoordinates = new List<Vector2>();
-    private List<string> roomTypes = new List<string>();
+    public List<Vector2> roomCoordinates = new List<Vector2>();
+    public List<string> roomTypes = new List<string>();
 
     public Dictionary<Vector2, List<Vector2>> doorLocations = new Dictionary<Vector2, List<Vector2>>();
     private Vector2 roomToExitRoom;
@@ -148,7 +148,7 @@ public class RoomController : MonoBehaviour
 
     IEnumerator loadRoomRoutine()
     {
-        AsyncOperation loadRoom = SceneManager.LoadSceneAsync("Start (Test)", LoadSceneMode.Additive);
+        AsyncOperation loadRoom = SceneManager.LoadSceneAsync("Start", LoadSceneMode.Additive);
         
         while (loadRoom.isDone == false)
         {
