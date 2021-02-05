@@ -16,7 +16,7 @@ public class EnemyAI : MonoBehaviour
     public Seeker seeker;
     public Rigidbody2D rb;
 
-    public EnemyController enemyController;
+    public Enemy enemy;
 
     
 
@@ -51,7 +51,7 @@ public class EnemyAI : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!enemyController.isDead)
+        if (!enemy.isDead)
         {
             if (path == null || currentWaypoint >= path.vectorPath.Count)
             {
@@ -75,12 +75,12 @@ public class EnemyAI : MonoBehaviour
 
             if (direction.x > 0)
             {
-                enemyController.enemyDirection = "Right";
+                enemy.enemyDirection = "Right";
                 transform.localScale = new Vector3(1, 1, 1);
             }
             else if (direction.x < 0)
             {
-                enemyController.enemyDirection = "Left";
+                enemy.enemyDirection = "Left";
                 transform.localScale = new Vector3(-1, 1, 1);
             }
         }

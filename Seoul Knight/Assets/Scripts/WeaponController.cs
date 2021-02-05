@@ -12,7 +12,6 @@ public class WeaponController : MonoBehaviour
     private Vector3 mousePosition;
     private float reloadTime = 0.5f;
     private bool reloading = false;
-    private string[] animationNames = { "Weapon_Attack_Before", "Weapon_Attack", "Weapon_Attack_After" };
 
     public Player player;
 
