@@ -1,18 +1,18 @@
 ﻿<Properties StartupConfiguration="{B5F0B553-A3D7-D8B5-83FC-15CC5497BE5D}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Room.cs">
     <Files>
-      <File FileName="Assets/Scripts/Behaviour.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/RoomController.cs" Line="28" Column="6" />
-      <File FileName="Assets/Scripts/Room.cs" Line="26" Column="52" />
+      <File FileName="Assets/Scripts/Player.cs" Line="37" Column="1" />
+      <File FileName="Assets/Scripts/WeaponController.cs" Line="21" Column="6" />
+      <File FileName="Assets/Scripts/Room.cs" Line="91" Column="1" />
       <File FileName="Assets/Scripts/EnemySpawner.cs" Line="56" Column="6" />
-      <File FileName="Assets/Scripts/Player.cs" Line="230" Column="6" />
-      <File FileName="Assets/Scripts/WeaponController.cs" Line="15" Column="1" />
-      <File FileName="Assets/Scripts/OptionsMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/EnemyController.cs" Line="58" Column="72" />
-      <File FileName="Assets/Scripts/EnemyAI.cs" Line="54" Column="27" />
-      <File FileName="Assets/Scripts/MainMenuButtons.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/HealthBar.cs" Line="27" Column="1" />
+      <File FileName="Assets/Scripts/OptionsMenu.cs" />
+      <File FileName="Assets/Scripts/EnemyAI.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MainMenuButtons.cs" />
+      <File FileName="Assets/Scripts/HealthBar.cs" />
       <File FileName="Assets/Scripts/PlayerHealthBar.cs" Line="32" Column="44" />
+      <File FileName="Assets/Scripts/GameOverMenu.cs" Line="20" Column="23" />
+      <File FileName="Assets/Scripts/Enemy.cs" Line="70" Column="45" />
+      <File FileName="Assets/Scripts/RandomObstaclesSpawner.cs" Line="17" Column="5" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,7 +20,8 @@
           <Node name="Seoul Knight" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Player.cs" selected="True" />
+                <Node name="Player" expanded="True" />
+                <Node name="Room.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -30,7 +31,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="564226ba-5693-4a6c-aca4-2542f0bc2b9b" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="04c326e7-b826-4846-9f08-33a453b134a0" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

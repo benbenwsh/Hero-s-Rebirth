@@ -44,18 +44,15 @@ TagManager:
   - name: Background
     uniqueID: 1885552471
     locked: 0
-  - name: Obstacles
-    uniqueID: 47384985
-    locked: 0
   - name: Enemy
     uniqueID: 1514918949
     locked: 0
-  - name: Weapons
-    uniqueID: 490800199
+  - name: Wall
+    uniqueID: 782420755
     locked: 0
   - name: Player
     uniqueID: 3080976083
     locked: 0
   - name: Cover
-    uniqueID: 782420755
+    uniqueID: 2023779695
     locked: 0

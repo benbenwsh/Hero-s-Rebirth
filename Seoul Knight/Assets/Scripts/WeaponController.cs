@@ -5,7 +5,6 @@ using System;
 
 public class WeaponController : MonoBehaviour
 {
-    public Transform aimTransform;
     public Camera cam;
     public Animator animator;
 
@@ -24,19 +23,19 @@ public class WeaponController : MonoBehaviour
         {
             mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
 
-            Vector3 lookDirection = (mousePosition - aimTransform.position).normalized;
+            Vector3 lookDirection = (mousePosition - transform.position).normalized;
 
             float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
 
             if (lookDirection.x >= 0)
             {
                 player.facingRight = true;
-                aimTransform.eulerAngles = new Vector3(0, 0, angle);
+                transform.eulerAngles = new Vector3(0, 0, angle);
             }
             else
             {
                 player.facingRight = false;
-                aimTransform.eulerAngles = new Vector3(0, 0, 180 + angle);
+                transform.eulerAngles = new Vector3(0, 0, 180 + angle);
             }
 
 

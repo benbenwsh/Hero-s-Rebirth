@@ -8,8 +8,8 @@ public class Room : MonoBehaviour
 {
     public string type;
     public Vector2 coordinates;
-    
 
+    //  Door Tiles
     public Tile wallRight;
     public Tile wallTopRight;
     public Tile wallLeft;
@@ -17,8 +17,11 @@ public class Room : MonoBehaviour
     public Tile wallSideFrontLeft;
     public Tile wallSideFrontRight;
 
-    public Tilemap obstaclesTilemap;
-    public Tilemap aboveObstaclesTilemap;
+    // Obstacle
+    public Tilemap rbTileMap;
+    public Tilemap coverTileMap;
+
+    public GameObject column;
 
     // Start is called before the first frame update
     void Start()
@@ -32,29 +35,28 @@ public class Room : MonoBehaviour
         foreach (Vector2 doorPosition in doorPositions)
         {
             Vector2 direction = doorPosition - coordinates;
-            TileBase[] nullArray = { null, null, null };
 
             if (direction == Vector2.up)
             {
                 Vector3Int obstaclesVector = new Vector3Int(-2, height / 2 - 1, 0);
                 Vector3Int obstaclesSize = new Vector3Int(5, 2, 1);
                 TileBase[] tiles = { wallRight, null, null, null, wallLeft, wallTopRight, null, null, null, wallTopLeft };
-                obstaclesTilemap.SetTilesBlock(new BoundsInt(obstaclesVector, obstaclesSize), tiles);
+                rbTileMap.SetTilesBlock(new BoundsInt(obstaclesVector, obstaclesSize), tiles);
 
             }
             else if (direction == Vector2.down)
             {
-                Vector3Int doorPositionVector = new Vector3Int(-2, -height / 2 + 1, 0);
-                Vector3Int doorSize = new Vector3Int(5, 1, 1);
-                TileBase[] wallTiles = { wallRight, null, null, null, wallLeft };
+                Vector3Int doorPositionVector = new Vector3Int(-1, -height / 2 + 1, 0);
+                Vector3Int doorSize = new Vector3Int(3, 1, 1);
+                TileBase[] wallTiles = { null, null, null };
 
-                obstaclesTilemap.SetTilesBlock(new BoundsInt(doorPositionVector, doorSize), wallTiles);
+                rbTileMap.SetTilesBlock(new BoundsInt(doorPositionVector, doorSize), wallTiles);
 
-                Vector3Int aboveObstaclesVector = new Vector3Int(-2, -height / 2 + 2, 0);
-                Vector3Int aboveObstaclesSize = new Vector3Int(5, 1, 1);
-                TileBase[] wallTopTiles = { wallTopRight, null, null, null, wallTopLeft };
+                Vector3Int aboveObstaclesVector = new Vector3Int(-2, -height / 2 + 1, 0);
+                Vector3Int aboveObstaclesSize = new Vector3Int(5, 2, 1);
+                TileBase[] wallTopTiles = { wallRight, null, null, null, wallLeft, wallTopRight, null, null, null, wallTopLeft };
 
-                aboveObstaclesTilemap.SetTilesBlock(new BoundsInt(aboveObstaclesVector, aboveObstaclesSize), wallTopTiles);
+                coverTileMap.SetTilesBlock(new BoundsInt(aboveObstaclesVector, aboveObstaclesSize), wallTopTiles);
 
             }
             else if (direction == Vector2.right)
@@ -63,8 +65,9 @@ public class Room : MonoBehaviour
                 Vector3Int doorSize = new Vector3Int(1, 4, 1);
                 TileBase[] tiles = { null, null, null, wallSideFrontRight };
 
-                obstaclesTilemap.SetTilesBlock(new BoundsInt(doorPositionVector, doorSize), tiles);
-                
+                rbTileMap.SetTilesBlock(new BoundsInt(doorPositionVector, doorSize), tiles);
+                coverTileMap.SetTilesBlock(new BoundsInt(doorPositionVector, doorSize), tiles);
+
             }
             else if (direction == Vector2.left)
             {
@@ -72,11 +75,30 @@ public class Room : MonoBehaviour
                 Vector3Int doorSize = new Vector3Int(1, 4, 1);
                 TileBase[] tiles = { null, null, null, wallSideFrontLeft };
 
-                obstaclesTilemap.SetTilesBlock(new BoundsInt(doorPositionVector, doorSize), tiles);
-                
+                rbTileMap.SetTilesBlock(new BoundsInt(doorPositionVector, doorSize), tiles);
+                coverTileMap.SetTilesBlock(new BoundsInt(doorPositionVector, doorSize), tiles);
+
             }
             
         }
 
+    }
+
+    public void SpawnObjects()
+    {
+        float screenX, screenY;
+        Vector2 pos;
+
+        for (int i = 0; i < noOfObstacles; i++)
+        {
+            int randomItem = Random.Range(0, spawnPool.Count);
+            toSpawn = spawnPool[randomItem];
+
+            screenX = Random.Range(c.bounds.min.x, c.bounds.max.x);
+            screenY = Random.Range(c.bounds.min.y, c.bounds.max.y);
+            pos = new Vector2(screenX, screenY);
+
+            Instantiate(toSpawn, pos, toSpawn.transform.rotation);
+        }
     }
 }
