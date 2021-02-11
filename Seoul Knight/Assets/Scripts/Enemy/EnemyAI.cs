@@ -5,9 +5,9 @@ using Pathfinding;
 
 public class EnemyAI : MonoBehaviour
 {
-    public Transform target;
+    private Transform target;
 
-    public float speed = 200f;
+    public float speed = 150f;
     public float nextWayPointdistance = 3f;
 
     Path path;
@@ -18,11 +18,10 @@ public class EnemyAI : MonoBehaviour
 
     public Enemy enemy;
 
-    
-
 
     void Start()
     {
+        target = GameObject.Find("Player").transform;
         InvokeRepeating("UpdatePath", 0, .5f);
     }
 

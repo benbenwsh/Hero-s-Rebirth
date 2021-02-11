@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using Pathfinding;
 
 public class RoomController : MonoBehaviour
 {
@@ -22,7 +22,7 @@ public class RoomController : MonoBehaviour
     
     public Vector2 currentRoomCoordinates = new Vector2(0, 0);
 
-    
+    public int gridGraphScanCount = 0;
 
     private void Awake()
     {
@@ -34,6 +34,7 @@ public class RoomController : MonoBehaviour
     private void Start()
     {
         RoomSpawner();
+
 
         for (int i = 0; i < noOfCombatRooms + 3; i++)
         {
@@ -67,13 +68,6 @@ public class RoomController : MonoBehaviour
 
         // Creating special room
         GeneratePossibleRooms(1, noOfCombatRooms, "Special");
-
-        //for (int i = 0; i < 5; i++)
-        //{
-        //    Debug.Log(roomCoordinates[i] + roomTypes[i]);
-        //}
-
-
     }
 
 
@@ -148,7 +142,7 @@ public class RoomController : MonoBehaviour
 
     IEnumerator loadRoomRoutine()
     {
-        AsyncOperation loadRoom = SceneManager.LoadSceneAsync("Start", LoadSceneMode.Additive);
+        AsyncOperation loadRoom = SceneManager.LoadSceneAsync("Room", LoadSceneMode.Additive);
         
         while (loadRoom.isDone == false)
         {
@@ -160,12 +154,11 @@ public class RoomController : MonoBehaviour
     {
         room.transform.position = new Vector3(roomCoordinates[0].x * width * 2, roomCoordinates[0].y * height * 2, 0);
 
-        room.coordinates = roomCoordinates[0];
+        room.roomCoordinates = roomCoordinates[0];
         room.type = roomTypes[0];
-        room.transform.parent = transform;
+        room.transform.parent = this.transform;
 
         roomCoordinates.RemoveAt(0);
         roomTypes.RemoveAt(0);
     }
-    
 }

@@ -7,7 +7,7 @@ public class Enemy: MonoBehaviour
     public Rigidbody2D rb;
     public Material material;
     public SpriteRenderer sprite;
-    private int hp = 5;
+    private int hp = 2;
     private bool invincible = false;
     
     private Color materialTintColour;
@@ -18,8 +18,10 @@ public class Enemy: MonoBehaviour
 
     private void Start()
     {
+        this.sprite.material.mainTexture = material.mainTexture;
         this.materialTintColour = new Color(255, 255, 255, 0);
-        this.material.SetColor("_Tint", materialTintColour);
+        this.sprite.material.SetColor("_Tint", materialTintColour);
+
     }
 
 
@@ -64,14 +66,14 @@ public class Enemy: MonoBehaviour
     {
         invincible = true;
         materialTintColour = new Color(255, 255, 255, 255);
-        material.SetColor("_Tint", materialTintColour);
+        this.sprite.material.SetColor("_Tint", materialTintColour);
 
         
         yield return new WaitForSeconds(0.05f);
 
         invincible = false;
         materialTintColour = new Color(255, 255, 255, 0);
-        material.SetColor("_Tint", materialTintColour);
+        this.sprite.material.SetColor("_Tint", materialTintColour);
     }
 
 

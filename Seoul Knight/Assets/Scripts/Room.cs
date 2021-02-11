@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using System;
+using Pathfinding;
 
 public class Room : MonoBehaviour
 {
     public string type;
-    public Vector2 coordinates;
+    public Vector2 roomCoordinates;
 
     //  Door Tiles
     public Tile wallRight;
@@ -21,20 +21,35 @@ public class Room : MonoBehaviour
     public Tilemap rbTileMap;
     public Tilemap coverTileMap;
 
-    public GameObject column;
+    public GameObject columnPrefab;
+    public GameObject enemyPrefab;
 
-    // Start is called before the first frame update
-    void Start()
+    public int noOfObstacles;
+    public int noOfEnemies;
+
+    private int width = RoomController.instance.width;
+    private int height = RoomController.instance.height;
+
+
+    private void Awake()
     {
         RoomController.instance.RegisterRoom(this);
-        
-        List<Vector2> doorPositions = RoomController.instance.doorLocations[coordinates];
-        int width = RoomController.instance.width;
-        int height = RoomController.instance.height;
+    }
+
+
+
+    void Start()
+    {
+        if (type == "Combat")
+        {
+            StartCoroutine(PrepareCombatRoom());
+        }
+
+        List<Vector2> doorPositions = RoomController.instance.doorLocations[roomCoordinates];
         
         foreach (Vector2 doorPosition in doorPositions)
         {
-            Vector2 direction = doorPosition - coordinates;
+            Vector2 direction = doorPosition - roomCoordinates;
 
             if (direction == Vector2.up)
             {
@@ -81,24 +96,54 @@ public class Room : MonoBehaviour
             }
             
         }
-
     }
 
-    public void SpawnObjects()
+
+    IEnumerator PrepareCombatRoom()
     {
-        float screenX, screenY;
-        Vector2 pos;
+        AstarData data = AstarPath.active.data;
+        GridGraph gg = data.AddGraph(typeof(GridGraph)) as GridGraph;
+        gg.center = new Vector3(roomCoordinates.x * width * 2 + 0.5f, roomCoordinates.y * height * 2 + 0.5f, 0);
+        gg.SetDimensions(width - 1, height - 3, 1);
+        gg.rotation = new Vector3(-90, 0, 0);
 
-        for (int i = 0; i < noOfObstacles; i++)
+        GraphCollision graphCollision = new GraphCollision();
+        graphCollision.use2D = true;
+        graphCollision.mask = LayerMask.GetMask("Obstacle");
+        gg.collision = graphCollision;
+
+        SpawnObjects(noOfObstacles, columnPrefab);
+        SpawnObjects(noOfEnemies, enemyPrefab);
+
+        yield return null;
+
+        AstarPath.active.Scan(gg);
+    }
+    
+
+
+    private void SpawnObjects(int noOfObjects, GameObject prefab)
+    {
+        List<Vector2> objectCoordinates = new List<Vector2>(noOfObjects);
+
+        while (objectCoordinates.Count < 5)
         {
-            int randomItem = Random.Range(0, spawnPool.Count);
-            toSpawn = spawnPool[randomItem];
+            int x = Random.Range(-(width - 3) / 2, (width - 3) / 2);
+            int y = Random.Range(-height / 2 + 3, height / 2 - 1);
+            Vector2 coordinates = new Vector2(x + 0.5f, y);
 
-            screenX = Random.Range(c.bounds.min.x, c.bounds.max.x);
-            screenY = Random.Range(c.bounds.min.y, c.bounds.max.y);
-            pos = new Vector2(screenX, screenY);
+            if (!objectCoordinates.Contains(coordinates))
+            {
+                objectCoordinates.Add(coordinates);
+            }
+        }
 
-            Instantiate(toSpawn, pos, toSpawn.transform.rotation);
+        for (int i = 0; i < noOfObjects; i++)
+        {
+            GameObject gameObject = Instantiate(prefab, this.transform, false) as GameObject;
+
+            gameObject.transform.localPosition = objectCoordinates[i];
+            gameObject.GetComponent<SpriteRenderer>().sortingOrder = (int)(-objectCoordinates[i].y * 100);
         }
     }
 }

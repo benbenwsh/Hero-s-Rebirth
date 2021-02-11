@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8404773095206733370}
   - component: {fileID: 8404773095206733371}
   - component: {fileID: 8404773095206733368}
-  - component: {fileID: 8404773095206733369}
-  m_Layer: 0
+  - component: {fileID: 1617258655400147603}
+  m_Layer: 13
   m_Name: Column
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!70 &8404773095206733369
+--- !u!70 &1617258655400147603
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,6 +118,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00000001494113, y: -0.6253354}
-  m_Size: {x: 1.0000014, y: 0.5629204}
+  m_Offset: {x: 0, y: -0.6251409}
+  m_Size: {x: 1, y: 0.56254035}
   m_Direction: 1
