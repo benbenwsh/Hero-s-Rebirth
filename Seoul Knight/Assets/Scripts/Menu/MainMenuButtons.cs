@@ -11,6 +11,11 @@ public class MainMenuButtons : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void Story()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
     public void QuitGame()
     {
         Debug.Log("Quit");

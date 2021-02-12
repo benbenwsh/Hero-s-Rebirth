@@ -281,13 +281,13 @@
       <HintPath>/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="Pathfinding.Ionic.Zip.Reduced">
-      <HintPath>/Users/benjaminwong 1/Desktop/GitHub/Seoul-Knight/Seoul Knight/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+      <HintPath>/Users/benjaminwong 1/Desktop/Game/Seoul-Knight/Seoul Knight/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>/Users/benjaminwong 1/Desktop/GitHub/Seoul-Knight/Seoul Knight/Library/PackageCache/com.unity.ext.nunit@1.0.5/net35/unity-custom/nunit.framework.dll</HintPath>
+      <HintPath>/Users/benjaminwong 1/Desktop/Game/Seoul-Knight/Seoul Knight/Library/PackageCache/com.unity.ext.nunit@1.0.5/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.NRefactory">
-      <HintPath>/Users/benjaminwong 1/Desktop/GitHub/Seoul-Knight/Seoul Knight/Library/PackageCache/com.unity.render-pipelines.core@7.3.1/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
+      <HintPath>/Users/benjaminwong 1/Desktop/Game/Seoul-Knight/Seoul Knight/Library/PackageCache/com.unity.render-pipelines.core@7.3.1/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>/Users/benjaminwong 1/Desktop/Unity/Hub/Editor/2019.4.17f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -644,16 +644,16 @@
       <HintPath>/Users/benjaminwong 1/Desktop/Unity/Hub/Editor/2019.4.17f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>/Users/benjaminwong 1/Desktop/GitHub/Seoul-Knight/Seoul Knight/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>/Users/benjaminwong 1/Desktop/Game/Seoul-Knight/Seoul Knight/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>/Users/benjaminwong 1/Desktop/GitHub/Seoul-Knight/Seoul Knight/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>/Users/benjaminwong 1/Desktop/Game/Seoul-Knight/Seoul Knight/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
-      <HintPath>/Users/benjaminwong 1/Desktop/GitHub/Seoul-Knight/Seoul Knight/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+      <HintPath>/Users/benjaminwong 1/Desktop/Game/Seoul-Knight/Seoul Knight/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-      <HintPath>/Users/benjaminwong 1/Desktop/GitHub/Seoul-Knight/Seoul Knight/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+      <HintPath>/Users/benjaminwong 1/Desktop/Game/Seoul-Knight/Seoul Knight/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

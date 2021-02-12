@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class GameOverMenu : MonoBehaviour
 {
+    public static GameOverMenu instance;
     public GameObject gameOverPanel;
 
     void Start()
     {
+        instance = this;
         gameOverPanel.SetActive(false);
     }
 

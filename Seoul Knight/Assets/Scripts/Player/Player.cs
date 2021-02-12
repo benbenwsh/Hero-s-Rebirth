@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     public bool attacking = false;
     public bool facingRight = true;
     public bool playerIsDead = false;
+    public HealthBar healthBar;
 
     private float moveSpeed = 5f;
     private Vector2 movement;
@@ -30,7 +31,9 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1f;
         this.material.SetColor("_Tint", flashColour);
+        healthBar.SetMaxHealth(hp);
     }
 
 
@@ -87,6 +90,10 @@ public class Player : MonoBehaviour
             {
                 AttackEnemy(collision);
 
+            }
+            else if (collision.gameObject.layer == LayerMask.NameToLayer("Stairs"))
+            {
+                GameOverMenu.instance.PlayAgain();
             }
         }
     }
@@ -203,6 +210,8 @@ public class Player : MonoBehaviour
         if (!invincible)
         {
             hp -= enemyDamage;
+            healthBar.setHealth(hp);
+
             if (hp > 0) {
                 StartCoroutine(TakeDamageAnimation());
             }

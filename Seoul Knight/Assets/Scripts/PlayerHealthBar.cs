@@ -8,7 +8,7 @@ public class playerscript1 : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
 
-    public healthbar healthbar;
+    public HealthBar healthbar;
 
     // Start is called before the first frame update
     private void Start()
@@ -29,7 +29,7 @@ public class playerscript1 : MonoBehaviour
     private void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        healthbar.sethealth(currentHealth);
+        healthbar.setHealth(currentHealth);
 
     }
 }

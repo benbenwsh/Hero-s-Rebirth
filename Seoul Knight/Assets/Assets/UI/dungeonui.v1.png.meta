@@ -11,6 +11,12 @@ TextureImporter:
   - first:
       213: 6703439691605663517
     second: dungeonui.v1_2
+  - first:
+      213: -5738173371712620600
+    second: dungeonui.v1_3
+  - first:
+      213: 7069302953715104483
+    second: dungeonui.v1_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -146,7 +152,7 @@ TextureImporter:
         width: 23
         height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 4, y: 2, z: 4, w: 2}
       outline: []
       physicsShape: []
@@ -154,6 +160,48 @@ TextureImporter:
       bones: []
       spriteID: d1fd86712e6670d50800000000000000
       internalID: 6703439691605663517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungeonui.v1_3
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 268
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 8, y: 8, z: 8, w: 8}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c7b67778b9ed50b0800000000000000
+      internalID: -5738173371712620600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungeonui.v1_4
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 249
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eafec5e4953b1260800000000000000
+      internalID: 7069302953715104483
       vertices: []
       indices: 
       edges: []
