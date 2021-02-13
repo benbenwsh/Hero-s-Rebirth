@@ -22,11 +22,12 @@ public class Player : MonoBehaviour
     private float moveSpeed = 5f;
     private Vector2 movement;
     private int damage = 1;
-    private int hp = 3;
+    private int hp = 100;
     private bool invincible = false;
     private Color flashColour = new Color(255, 255, 255, 0);
     private Color normalColour = new Color(255, 255, 255, 255);
-    
+    private bool firstRoom = true;
+
 
 
     private void Start()
@@ -34,6 +35,10 @@ public class Player : MonoBehaviour
         Time.timeScale = 1f;
         this.material.SetColor("_Tint", flashColour);
         healthBar.SetMaxHealth(hp);
+
+        AudioManager.instance.Stop("BattleMusic");
+        AudioManager.instance.Stop("PlayerDeath");
+        AudioManager.instance.Play("FirstRoomMusic");
     }
 
 
@@ -149,7 +154,6 @@ public class Player : MonoBehaviour
         {
             if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
             {
-                
                 TakeDamage(1, collision);
             }
         }
@@ -167,11 +171,17 @@ public class Player : MonoBehaviour
         Vector3 newPlayerPosition;
         Debug.Log(collisionCoordinates - currentRoomCoordinates * new Vector2(width, height) * 2);
 
+        if (firstRoom)
+        {
+            AudioManager.instance.Stop("FirstRoomMusic");
+            AudioManager.instance.Play("BattleMusic");
+            firstRoom = false;
+        }
+
         //  Right door
         if (collisionCoordinates.x - currentRoomCoordinates.x * width * 2 > 3)
         {
             newPlayerPosition = new Vector3(rb.position.x + width + 1, rb.position.y, 0);
-            Debug.Log("1" + newPlayerPosition);
 
             RoomController.instance.currentRoomCoordinates.x++;
         }
@@ -179,7 +189,6 @@ public class Player : MonoBehaviour
         else if (currentRoomCoordinates.x * width * 2 - collisionCoordinates.x > 3)
         {
             newPlayerPosition = new Vector3(rb.position.x - width - 1, rb.position.y, 0);
-            Debug.Log("2" + newPlayerPosition);
 
             RoomController.instance.currentRoomCoordinates.x--;
         }
@@ -187,7 +196,6 @@ public class Player : MonoBehaviour
         else if (collisionCoordinates.y - currentRoomCoordinates.y * height * 2 > 3)
         {
             newPlayerPosition = new Vector3(rb.position.x, rb.position.y + height + 3, 0);
-            Debug.Log("3" + newPlayerPosition);
 
             RoomController.instance.currentRoomCoordinates.y++;
         }
@@ -196,7 +204,6 @@ public class Player : MonoBehaviour
         {
             newPlayerPosition = new Vector3(rb.position.x, rb.position.y - height - 3, 0);
 
-            Debug.Log("4" + newPlayerPosition);
             RoomController.instance.currentRoomCoordinates.y--;
         }
 
@@ -245,11 +252,17 @@ public class Player : MonoBehaviour
         invincible = false;
     }
 
-
+    IEnumerator PlayDead()
+    {
+        AudioManager.instance.Stop("BattleMusic");
+        yield return new WaitForSeconds(0.1f);
+        AudioManager.instance.Play("PlayerDeath");
+    }
 
     private void Die(Collision2D collision)
     {
         playerIsDead = true;
+        StartCoroutine(PlayDead());
 
         if (facingRight)
         {
