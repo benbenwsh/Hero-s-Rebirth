@@ -1,17 +1,20 @@
 # Seoul Knight
 Rogue-like Dungeon crawler game
-=========
+
 ## Agenda
-* 15/2/2021 (Mon)
-**B: Shut door mechanism
+* Ben
+1. Shut door mechanism
+2. Switch weapons
+3. Super
+4. Weapon reload bar
+5. Enemy health bar?
+6. Sprites set to same white shader material
+7. Levels
+8. Choose M/F
 
-
-
-* Bella -- Enemies (A* pathfinding algorithm, movement, animation), UI, Obstacles random generation, HUD (Health bar)
-* Hiroshi -- Assets, randomly spawning enemies
-
-## Game Theme / Storyline
-
-A knight has been killed in battle and in his final moments he dreams of his life. But, as death approaches, he starts to see things he doesn't remember, and his memory starts to fight back. Enemies appear, and the dreams get increasingly labyrinthine.
-
-The first level presents our hero in the house where he was born. 
+* Larry
+1. Instantiate treasure box
+2. Player obtaining treasures
+3. Same for special room
+4. Weapon upgrading
+5. Player unlocking
