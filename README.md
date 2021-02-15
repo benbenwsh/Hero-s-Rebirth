@@ -11,6 +11,7 @@ Rogue-like Dungeon crawler game
 6. Sprites set to same white shader material
 7. Levels
 8. Choose M/F
+9. Delete unnecessary scripts
 
 * Larry
 1. Instantiate treasure box
