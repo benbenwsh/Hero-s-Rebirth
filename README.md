@@ -19,3 +19,4 @@ Rogue-like Dungeon crawler game
 3. Same for special room
 4. Weapon upgrading
 5. Player unlocking
+6. How-to-play page
