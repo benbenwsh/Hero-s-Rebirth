@@ -12,6 +12,7 @@ Rogue-like Dungeon crawler game
 7. Levels
 8. Choose M/F
 9. Delete unnecessary scripts
+10. Decoration
 
 * Larry
 1. Instantiate treasure box
