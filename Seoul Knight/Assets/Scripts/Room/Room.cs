@@ -113,18 +113,20 @@ public class Room : MonoBehaviour
         gg.center = new Vector3(roomCoordinates.x * width * 2 + 0.5f, roomCoordinates.y * height * 2 + 0.5f, 0);
         gg.SetDimensions(width - 1, height - 3, 1);
         gg.rotation = new Vector3(-90, 0, 0);
-
+        gg.showMeshSurface = true;
+        gg.showMeshOutline = true;
         GraphCollision graphCollision = new GraphCollision();
         graphCollision.use2D = true;
         graphCollision.mask = LayerMask.GetMask("Obstacle");
         gg.collision = graphCollision;
 
         SpawnObjects(noOfObstacles, columnPrefab);
-        SpawnObjects(noOfEnemies, enemyPrefab);
+        
 
         yield return null;
 
         AstarPath.active.Scan(gg);
+        SpawnObjects(noOfEnemies, enemyPrefab);
     }
     
 

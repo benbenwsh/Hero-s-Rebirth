@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 4358020348020537395}
   - component: {fileID: 4358020348020537393}
   - component: {fileID: 4358020348020537390}
-  - component: {fileID: 4358020348020537391}
   - component: {fileID: 4358020348020537392}
+  - component: {fileID: 4358020348020537391}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -74,14 +74,14 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1514918949
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 674df63f097e54e67ad48f27236c7428, type: 3}
+  m_Sprite: {fileID: 21300000, guid: de82a657737f043d2b8630b521ccfa12, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -126,7 +126,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 0.16, y: 0.16}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -181,24 +181,6 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
---- !u!114 &4358020348020537391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4358020348020537388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07ff267f41dbd4f2a99461ce7741abd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  speed: 500
-  nextWayPointdistance: 1
-  seeker: {fileID: 4358020348020537390}
-  rb: {fileID: 4358020348020537394}
-  enemy: {fileID: 4358020348020537392}
 --- !u!114 &4358020348020537392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,3 +199,21 @@ MonoBehaviour:
   enemyAI: {fileID: 4358020348020537391}
   isDead: 0
   enemyDirection: 
+--- !u!114 &4358020348020537391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4358020348020537388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07ff267f41dbd4f2a99461ce7741abd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 500
+  nextWayPointdistance: 1
+  seeker: {fileID: 4358020348020537390}
+  rb: {fileID: 4358020348020537394}
+  animator: {fileID: 4358020348020537393}
+  enemy: {fileID: 4358020348020537392}

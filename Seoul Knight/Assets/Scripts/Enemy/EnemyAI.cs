@@ -5,7 +5,7 @@ using Pathfinding;
 
 public class EnemyAI : MonoBehaviour
 {
-    private Transform target;
+    private BoxCollider2D targetBoxCollider;
 
     public float speed = 150f;
     public float nextWayPointdistance = 3f;
@@ -15,13 +15,14 @@ public class EnemyAI : MonoBehaviour
 
     public Seeker seeker;
     public Rigidbody2D rb;
+    public Animator animator;
 
     public Enemy enemy;
 
 
     void Start()
     {
-        target = GameObject.Find("Player").transform;
+        targetBoxCollider = GameObject.Find("Player").GetComponent<BoxCollider2D>();
         InvokeRepeating("UpdatePath", 0, .5f);
     }
 
@@ -31,7 +32,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (seeker.IsDone())
         {
-            seeker.StartPath(rb.position, target.position, OnPathComplete);
+            seeker.StartPath(rb.position, targetBoxCollider.bounds.center, OnPathComplete);
         } 
     }
 
@@ -70,17 +71,26 @@ public class EnemyAI : MonoBehaviour
                 currentWaypoint++;
             }
 
-
-
-            if (direction.x > 0)
+            if (force.sqrMagnitude == 0)
             {
-                enemy.enemyDirection = "Right";
-                transform.localScale = new Vector3(1, 1, 1);
+                animator.SetBool("Moving", false);
             }
-            else if (direction.x < 0)
+            else
             {
-                enemy.enemyDirection = "Left";
-                transform.localScale = new Vector3(-1, 1, 1);
+                if (direction.x >= 0)
+                {
+                    enemy.enemyDirection = "Right";
+
+                    transform.localScale = new Vector3(1, 1, 1);
+                }
+                else
+                {
+                    enemy.enemyDirection = "Left";
+
+                    transform.localScale = new Vector3(-1, 1, 1);
+                }
+
+                animator.SetBool("Moving", true);
             }
         }
         

@@ -21,7 +21,6 @@ public class Enemy: MonoBehaviour
         this.sprite.material.mainTexture = material.mainTexture;
         this.materialTintColour = new Color(255, 255, 255, 0);
         this.sprite.material.SetColor("_Tint", materialTintColour);
-
     }
 
 

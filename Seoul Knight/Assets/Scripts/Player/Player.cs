@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     private float moveSpeed = 5f;
     private Vector2 movement;
     private int damage = 1;
-    private int hp = 100;
+    private int hp = 5;
     private bool invincible = false;
     private Color flashColour = new Color(255, 255, 255, 0);
     private Color normalColour = new Color(255, 255, 255, 255);
@@ -262,25 +262,22 @@ public class Player : MonoBehaviour
     private void Die(Collision2D collision)
     {
         playerIsDead = true;
+        animator.enabled = false;
+        aim.SetActive(false);
         StartCoroutine(PlayDead());
 
         if (facingRight)
         {
-            animator.SetBool("FacingRight", true);
-
+            transform.rotation = Quaternion.Euler(Vector3.forward * 90);
         }
         else
         {
-            animator.SetBool("FacingRight", false);
+            transform.rotation = Quaternion.Euler(Vector3.back * 90);
         }
-
-        animator.SetTrigger("Die");
-
-        aim.SetActive(false);
 
         playerSpriteRenderer.color = new Color(0.25f, 0.25f, 0.25f, 1);
 
-        Vector2 knockback = transform.position - collision.transform.position;
+        Vector2 knockback = GetComponent<BoxCollider2D>().bounds.center - collision.gameObject.GetComponent<BoxCollider2D>().bounds.center;
         knockback = knockback.normalized * 10;
         rb.AddForce(knockback, ForceMode2D.Impulse);
         StartCoroutine(GameOver());

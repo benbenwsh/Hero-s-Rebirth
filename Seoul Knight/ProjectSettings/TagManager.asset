@@ -44,11 +44,11 @@ TagManager:
   - name: Background
     uniqueID: 1885552471
     locked: 0
-  - name: Enemy
-    uniqueID: 1514918949
-    locked: 0
   - name: Wall
     uniqueID: 782420755
+    locked: 0
+  - name: Enemy
+    uniqueID: 1514918949
     locked: 0
   - name: Player
     uniqueID: 3080976083
