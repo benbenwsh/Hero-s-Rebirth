@@ -15,12 +15,12 @@ Rogue-like Dungeon crawler game
   * Add traps on floor
 
 * Larry
- * Instantiate treasure box
- * Player obtaining treasures
- * Same for special room
- * Weapon upgrading
- * Player unlocking
- * How-to-play page
+  * Instantiate treasure box
+  * Player obtaining treasures
+  * Same for special room
+  * Weapon upgrading
+  * Player unlocking
+  * How-to-play page
 
 ### Today
 1. Shut door mechanism
