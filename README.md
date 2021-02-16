@@ -22,3 +22,7 @@ Rogue-like Dungeon crawler game
 4. Weapon upgrading
 5. Player unlocking
 6. How-to-play page
+
+### Today
+1. Shut door mechanism
+2. Enemy stuck bug
