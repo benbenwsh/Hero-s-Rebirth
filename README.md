@@ -3,9 +3,10 @@ Rogue-like Dungeon crawler game
 
 ## Agenda
 * Ben
+  * Improve reload bar design
+  * Improve attacking mechanic (Moving cursor around player x)
   * Switch weapons
   * Super
-  * Weapon reload bar
   * Enemy health bar?
   * Sprites set to same white shader material
   * Levels
