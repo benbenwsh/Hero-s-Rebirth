@@ -25,3 +25,4 @@ Rogue-like Dungeon crawler game
 ### Today
 1. Shut door mechanism
 2. Enemy stuck bug
+3. Weapon Reload bar
