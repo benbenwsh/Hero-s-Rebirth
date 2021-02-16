@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class Enemy: MonoBehaviour
 {
+    public SpriteRenderer sprite;
     public Rigidbody2D rb;
     public Material material;
-    public SpriteRenderer sprite;
+    public Animator animator;
+    public EnemyAI enemyAI;
+
     private int hp = 2;
     private bool invincible = false;
-    
-    private Color materialTintColour;
-    public EnemyAI enemyAI;
-    public bool isDead = false;
 
+    public bool isDead = false;
     public string enemyDirection = "Right";
+
+    private Color materialTintColour;
+    
+    
 
     private void Start()
     {
@@ -40,26 +44,36 @@ public class Enemy: MonoBehaviour
             else
             {
                 //  Die
-                isDead = true;
-                enemyAI.CancelInvoke();
-                knockback *= 20;
-                rb.AddForce(knockback, ForceMode2D.Impulse);
-
-                if (enemyDirection == "Right")
-                {
-                    transform.rotation = Quaternion.Euler(Vector3.forward * 90);
-                }
-                else
-                {
-                    transform.rotation = Quaternion.Euler(Vector3.back * 90);
-                }
-
-
-                sprite.color = new Color(0.25f, 0.25f, 0.25f, 1);
-                gameObject.layer = LayerMask.NameToLayer("Dead Enemy");
+                Die(knockback);
             }
         }
     }
+
+
+
+    private void Die(Vector2 knockback)
+    {
+        isDead = true;
+        enemyAI.CancelInvoke();
+        animator.enabled = false;
+
+        knockback *= 20;
+        rb.AddForce(knockback, ForceMode2D.Impulse);
+
+        if (enemyDirection == "Right")
+        {
+            transform.rotation = Quaternion.Euler(Vector3.forward * 90);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(Vector3.back * 90);
+        }
+
+        sprite.color = new Color(0.25f, 0.25f, 0.25f, 1);
+        gameObject.layer = LayerMask.NameToLayer("Dead Enemy");
+    }
+
+
 
     IEnumerator TakeDamageAnimation()
     {

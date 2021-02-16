@@ -193,9 +193,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e90ffd94dd7845b7985da053624517b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite: {fileID: 4358020348020537397}
   rb: {fileID: 4358020348020537394}
   material: {fileID: 2100000, guid: ae6d21e78e959453684669c752cdab27, type: 2}
-  sprite: {fileID: 4358020348020537397}
+  animator: {fileID: 4358020348020537393}
   enemyAI: {fileID: 4358020348020537391}
   isDead: 0
   enemyDirection: 

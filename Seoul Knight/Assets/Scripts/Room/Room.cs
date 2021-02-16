@@ -48,7 +48,6 @@ public class Room : MonoBehaviour
         else if (type == "Exit")
         {
             GameObject gameObject = Instantiate(stairsPrefab, this.transform, false) as GameObject;
-
             gameObject.transform.localPosition = new Vector3(0.5f, 0.5f, 0);
         }
 
@@ -65,6 +64,17 @@ public class Room : MonoBehaviour
                 TileBase[] tiles = { wallRight, null, null, null, wallLeft, wallTopRight, null, null, null, wallTopLeft };
                 rbTileMap.SetTilesBlock(new BoundsInt(obstaclesVector, obstaclesSize), tiles);
 
+                if (type == "Combat")
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        GameObject door = Instantiate(columnPrefab, this.transform, false) as GameObject;
+
+                        door.transform.localPosition = new Vector2(i - 0.5f, height / 2 - 0.5f);
+                        door.tag = "Door";
+                        door.GetComponent<SpriteRenderer>().sortingOrder = (int)(-door.transform.position.y * 100);
+                    }
+                }
             }
             else if (direction == Vector2.down)
             {
@@ -80,6 +90,17 @@ public class Room : MonoBehaviour
 
                 coverTileMap.SetTilesBlock(new BoundsInt(aboveObstaclesVector, aboveObstaclesSize), wallTopTiles);
 
+                if (type == "Combat")
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        GameObject door = Instantiate(columnPrefab, this.transform, false) as GameObject;
+
+                        door.transform.localPosition = new Vector2(i - 0.5f, -height / 2 + 1.5f);
+                        door.tag = "Door";
+                        door.GetComponent<SpriteRenderer>().sortingOrder = (int)(-door.transform.position.y * 100);
+                    }
+                }
             }
             else if (direction == Vector2.right)
             {
@@ -90,6 +111,18 @@ public class Room : MonoBehaviour
                 rbTileMap.SetTilesBlock(new BoundsInt(doorPositionVector, doorSize), tiles);
                 coverTileMap.SetTilesBlock(new BoundsInt(doorPositionVector, doorSize), tiles);
 
+                if (type == "Combat")
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        GameObject door = Instantiate(columnPrefab, this.transform, false) as GameObject;
+
+                        door.transform.localPosition = new Vector2((width - 1) / 2 + 0.5f, i - 0.5f);
+                        door.tag = "Door";
+                        door.GetComponent<SpriteRenderer>().sortingLayerName = "Cover";
+                        door.GetComponent<SpriteRenderer>().sortingOrder = -i;
+                    }
+                }
             }
             else if (direction == Vector2.left)
             {
@@ -100,8 +133,19 @@ public class Room : MonoBehaviour
                 rbTileMap.SetTilesBlock(new BoundsInt(doorPositionVector, doorSize), tiles);
                 coverTileMap.SetTilesBlock(new BoundsInt(doorPositionVector, doorSize), tiles);
 
+                if (type == "Combat")
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        GameObject door = Instantiate(columnPrefab, this.transform, false) as GameObject;
+
+                        door.transform.localPosition = new Vector2(-(width - 1) / 2 + 0.5f, i - 0.5f);
+                        door.tag = "Door";
+                        door.GetComponent<SpriteRenderer>().sortingLayerName = "Cover";
+                        door.GetComponent<SpriteRenderer>().sortingOrder = -i;
+                    }
+                }
             }
-            
         }
     }
 
@@ -120,18 +164,18 @@ public class Room : MonoBehaviour
         graphCollision.mask = LayerMask.GetMask("Obstacle");
         gg.collision = graphCollision;
 
-        SpawnObjects(noOfObstacles, columnPrefab);
+        RandomObjectsSpawner(noOfObstacles, columnPrefab);
         
 
         yield return null;
 
         AstarPath.active.Scan(gg);
-        SpawnObjects(noOfEnemies, enemyPrefab);
+        RandomObjectsSpawner(noOfEnemies, enemyPrefab);
     }
     
 
 
-    private void SpawnObjects(int noOfObjects, GameObject prefab)
+    private void RandomObjectsSpawner(int noOfObjects, GameObject prefab)
     {
         List<Vector2> objectCoordinates = new List<Vector2>(noOfObjects);
 
@@ -139,7 +183,7 @@ public class Room : MonoBehaviour
         {
             int x = Random.Range(-(width - 3) / 2, (width - 3) / 2);
             int y = Random.Range(-height / 2 + 3, height / 2 - 1);
-            Vector2 coordinates = new Vector2(x + 0.5f, y);
+            Vector2 coordinates = new Vector2(x + 0.5f, y + 0.5f);
 
             if (!objectCoordinates.Contains(coordinates))
             {
