@@ -26,6 +26,7 @@ Rogue-like Dungeon crawler game
 ### Today
 1. Switching weapon
 2. Reloading problem (switching weapon)
-3. Super
+3. Cannot switch weapons while reloading
+4. Super
 
 
