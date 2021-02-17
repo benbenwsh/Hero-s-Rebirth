@@ -55,7 +55,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
      <Compile Include="Assets\Scripts\AudioManager.cs" />
+=======
+     <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
+     <Compile Include="Assets\Scripts\Audio\Sound.cs" />
+>>>>>>> Stashed changes
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyAI.cs" />
@@ -64,11 +69,20 @@
      <Compile Include="Assets\Scripts\Menu\MainMenuButtons.cs" />
      <Compile Include="Assets\Scripts\Menu\OptionsMenu.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />
+<<<<<<< Updated upstream
      <Compile Include="Assets\Scripts\Player\WeaponController.cs" />
      <Compile Include="Assets\Scripts\PlayerHealthBar.cs" />
      <Compile Include="Assets\Scripts\Room\Room.cs" />
      <Compile Include="Assets\Scripts\Room\RoomController.cs" />
      <Compile Include="Assets\Scripts\Sound.cs" />
+=======
+     <Compile Include="Assets\Scripts\Player\ReloadBar.cs" />
+     <Compile Include="Assets\Scripts\Player\Weapon.cs" />
+     <Compile Include="Assets\Scripts\Player\WeaponCollision.cs" />
+     <Compile Include="Assets\Scripts\Player\WeaponSwitching.cs" />
+     <Compile Include="Assets\Scripts\Room\Room.cs" />
+     <Compile Include="Assets\Scripts\Room\RoomController.cs" />
+>>>>>>> Stashed changes
      <Compile Include="Assets\Scripts\Story\Dialogue.cs" />
      <Compile Include="Assets\Scripts\Story\DialogueManager.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
