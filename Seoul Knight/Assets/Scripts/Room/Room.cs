@@ -48,8 +48,8 @@ public class Room : MonoBehaviour
         }
         else if (type == "Exit")
         {
-            GameObject gameObject = Instantiate(stairsPrefab, this.transform, false) as GameObject;
-            gameObject.transform.localPosition = new Vector3(0.5f, 0.5f, 0);
+            GameObject stairs = Instantiate(stairsPrefab, this.transform, false) as GameObject;
+            stairs.transform.localPosition = new Vector3(0.5f, 1.5f, 0);
         }
 
         List<Vector2> doorPositions = RoomController.instance.doorLocations[roomCoordinates];

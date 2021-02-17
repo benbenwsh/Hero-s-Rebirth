@@ -620,6 +620,7 @@ MonoBehaviour:
   player: {fileID: 1495052131}
   reloadBar: {fileID: 208559458}
   cam: {fileID: 1650928511}
+  weaponHolder: {fileID: 925243942}
   damage: 1
   knockbackMultipler: 5
   reloadTime: 2
@@ -1013,7 +1014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abbf383f689094a7ba8641fbd0f02f0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedWeaponIndex: 0
+  reloading: 0
 --- !u!1 &1057125764
 GameObject:
   m_ObjectHideFlags: 0
@@ -2862,6 +2863,7 @@ GameObject:
   - component: {fileID: 2011638645}
   - component: {fileID: 2011638644}
   - component: {fileID: 2011638643}
+  - component: {fileID: 2011638646}
   m_Layer: 10
   m_Name: Weapon
   m_TagString: Untagged
@@ -2978,6 +2980,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2011638646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011638641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a27bfbab5e2714dc6b1e01f2c7862d4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2043138098
 GameObject:
   m_ObjectHideFlags: 0
@@ -3214,8 +3228,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1495052131}
-  reloadBar: {fileID: 208559458}
+  reloadBar: {fileID: 746840644}
   cam: {fileID: 1650928511}
+  weaponHolder: {fileID: 925243942}
   damage: 1
   knockbackMultipler: 10
   reloadTime: 2
