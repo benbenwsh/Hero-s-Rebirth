@@ -52,6 +52,7 @@ public class Room : MonoBehaviour
 
             stairs.transform.localPosition = new Vector3(0.5f, 1.5f, 0);
 
+<<<<<<< Updated upstream
             GameObject treasuryChest  = Instantiate(treasuryChestPrefab, this.transform, false) as GameObject;
 
             treasuryChest.transform.localPosition = new Vector3(0.5f, 0.5f, 0);
@@ -59,6 +60,10 @@ public class Room : MonoBehaviour
 
 
 
+=======
+            GameObject treasuryChest = Instantiate(treasuryChestPrefab, this.transform, false) as GameObject;
+            treasuryChest.transform.localPosition = new Vector3(0.5f, 0.5f, 0);
+>>>>>>> Stashed changes
         }
 
         List<Vector2> doorPositions = RoomController.instance.doorLocations[roomCoordinates];

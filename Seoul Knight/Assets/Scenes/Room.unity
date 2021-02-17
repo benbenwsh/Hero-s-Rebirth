@@ -167,7 +167,11 @@ MonoBehaviour:
     type: 3}
   stairsPrefab: {fileID: 8879664599929523303, guid: 420bef423f62244acbfb06f8970de27a,
     type: 3}
+<<<<<<< Updated upstream
   treasuryChestPrefab: {fileID: 9170381492786355897, guid: 84f29d21bfcda4156bf53050105f4507,
+=======
+  treasuryChestPrefab: {fileID: 8638040069471552750, guid: 613a8ee3eb3604ae3a8ba84d5a0c436e,
+>>>>>>> Stashed changes
     type: 3}
   noOfObstacles: 5
   noOfEnemies: 2
