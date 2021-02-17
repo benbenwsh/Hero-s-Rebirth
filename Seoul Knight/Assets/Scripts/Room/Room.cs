@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -24,6 +24,7 @@ public class Room : MonoBehaviour
     public GameObject columnPrefab;
     public GameObject enemyPrefab;
     public GameObject stairsPrefab;
+    public GameObject treasuryChestPrefab;
 
     public int noOfObstacles;
     public int noOfEnemies;
@@ -47,9 +48,17 @@ public class Room : MonoBehaviour
         }
         else if (type == "Exit")
         {
-            GameObject gameObject = Instantiate(stairsPrefab, this.transform, false) as GameObject;
+            GameObject stairs = Instantiate(stairsPrefab, this.transform, false) as GameObject;
 
-            gameObject.transform.localPosition = new Vector3(0.5f, 0.5f, 0);
+            stairs.transform.localPosition = new Vector3(0.5f, 1.5f, 0);
+
+            GameObject treasuryChest  = Instantiate(treasuryChestPrefab, this.transform, false) as GameObject;
+
+            treasuryChest.transform.localPosition = new Vector3(0.5f, 0.5f, 0);
+
+
+
+
         }
 
         List<Vector2> doorPositions = RoomController.instance.doorLocations[roomCoordinates];
