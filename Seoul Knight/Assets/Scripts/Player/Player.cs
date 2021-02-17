@@ -6,7 +6,6 @@ public class Player : MonoBehaviour
 {
     public Rigidbody2D rb;
     public Animator animator;
-    public Animator weaponAnimator;
     public Material material;
     public SpriteRenderer playerSpriteRenderer;
     public SpriteRenderer weaponSpriteRenderer;
@@ -19,9 +18,8 @@ public class Player : MonoBehaviour
     public bool playerIsDead = false;
     public HealthBar healthBar;
 
-    private float moveSpeed = 5f;
     private Vector2 movement;
-    private int damage = 1;
+    private float moveSpeed = 5f;
     private int hp = 5;
     private bool invincible = false;
     private Color flashColour = new Color(255, 255, 255, 0);
@@ -91,41 +89,10 @@ public class Player : MonoBehaviour
     {
         if (!playerIsDead)
         {
-            if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
-            {
-                AttackEnemy(collision);
-
-            }
-            else if (collision.gameObject.layer == LayerMask.NameToLayer("Stairs"))
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Stairs"))
             {
                 GameOverMenu.instance.PlayAgain();
             }
-        }
-    }
-
-
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (!playerIsDead)
-        {
-            if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
-            {
-                AttackEnemy(collision);
-            }
-        }
-    }
-
-
-
-    private void AttackEnemy(Collider2D collision)
-    {
-        if (weaponAnimator.GetCurrentAnimatorStateInfo(0).IsName("Weapon_Attack"))
-        {
-            Vector2 knockback = collision.transform.position - transform.position;
-            knockback = knockback.normalized;
-
-            collision.GetComponent<Enemy>().TakeDamage(damage, knockback);
         }
     }
 
@@ -217,7 +184,7 @@ public class Player : MonoBehaviour
         if (!invincible)
         {
             hp -= enemyDamage;
-            healthBar.setHealth(hp);
+            healthBar.SetHealth(hp);
 
             if (hp > 0) {
                 StartCoroutine(TakeDamageAnimation());

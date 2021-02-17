@@ -74,8 +74,10 @@
     <Compile Include="Assets\Scripts\Menu\MainMenuButtons.cs" />
     <Compile Include="Assets\Scripts\Menu\OptionsMenu.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
-    <Compile Include="Assets\Scripts\Player\WeaponController.cs" />
-    <Compile Include="Assets\Scripts\PlayerHealthBar.cs" />
+    <Compile Include="Assets\Scripts\Player\ReloadBar.cs" />
+    <Compile Include="Assets\Scripts\Player\Weapon.cs" />
+    <Compile Include="Assets\Scripts\Player\WeaponCollision.cs" />
+    <Compile Include="Assets\Scripts\Player\WeaponSwitching.cs" />
     <Compile Include="Assets\Scripts\Room\Room.cs" />
     <Compile Include="Assets\Scripts\Room\RoomController.cs" />
     <Compile Include="Assets\Scripts\Story\Dialogue.cs" />

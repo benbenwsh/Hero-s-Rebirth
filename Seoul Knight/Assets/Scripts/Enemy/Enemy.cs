@@ -29,7 +29,7 @@ public class Enemy: MonoBehaviour
 
 
 
-    public void TakeDamage(int damage, Vector2 knockback)
+    public void TakeDamage(int damage, Vector2 knockback, int knockbackMultiplier)
     {
         if (!invincible)
         {
@@ -38,7 +38,7 @@ public class Enemy: MonoBehaviour
             if (hp > 0)
             {
                 StartCoroutine(TakeDamageAnimation());
-                knockback *= 5;
+                knockback *= knockbackMultiplier;
                 rb.AddForce(knockback, ForceMode2D.Impulse);
             }
             else
@@ -56,6 +56,13 @@ public class Enemy: MonoBehaviour
         isDead = true;
         enemyAI.CancelInvoke();
         animator.enabled = false;
+
+        Room currentRoom = transform.parent.GetComponent<Room>();
+        currentRoom.noOfEnemies--;
+
+        if (currentRoom.noOfEnemies == 0) {
+            currentRoom.RemoveDoors();
+        }
 
         knockback *= 20;
         rb.AddForce(knockback, ForceMode2D.Impulse);
@@ -80,7 +87,6 @@ public class Enemy: MonoBehaviour
         invincible = true;
         materialTintColour = new Color(255, 255, 255, 255);
         this.sprite.material.SetColor("_Tint", materialTintColour);
-
         
         yield return new WaitForSeconds(0.05f);
 
