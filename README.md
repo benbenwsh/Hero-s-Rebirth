@@ -6,6 +6,7 @@ Rogue-like Dungeon crawler game
   * Improve attacking mechanic (Moving cursor around player x)
   * Switch weapons
   * Super
+  * Collect armours on top of leveling up
   * Enemy health bar?
   * Sprites set to same white shader material
   * Levels
