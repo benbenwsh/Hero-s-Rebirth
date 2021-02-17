@@ -3,7 +3,6 @@ Rogue-like Dungeon crawler game
 
 ## Agenda
 * Ben
-  * Improve reload bar design
   * Improve attacking mechanic (Moving cursor around player x)
   * Switch weapons
   * Super
@@ -24,6 +23,8 @@ Rogue-like Dungeon crawler game
   * How-to-play page
 
 ### Today
-1. Shut door mechanism
-2. Enemy stuck bug
-3. Weapon Reload bar
+1. Switching weapon
+2. Reloading problem (switching weapon)
+3. Super
+
+
