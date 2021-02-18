@@ -5,6 +5,7 @@ Rogue-like Dungeon crawler game
 * Ben
   * Improve attacking mechanic (Moving cursor around player x)
   * Switch weapons
+  * Exit room + Special room
   * Super
   * Collect armours on top of leveling up
   * Enemy health bar?
@@ -14,11 +15,6 @@ Rogue-like Dungeon crawler game
   * Delete unnecessary scripts
   * Decoration
   * Add traps on floor
-
-* Larry
-  * Instantiate treasure box
-  * Player obtaining treasures
-  * Same for special room
   * Weapon upgrading
   * Player unlocking
   * How-to-play page
