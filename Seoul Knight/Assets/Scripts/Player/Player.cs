@@ -8,15 +8,16 @@ public class Player : MonoBehaviour
     public Animator animator;
     public Material material;
     public SpriteRenderer playerSpriteRenderer;
-    public SpriteRenderer weaponSpriteRenderer;
     public GameObject aim;
     public Sprite deathSprite;
     public GameObject gameOverPanel;
+    public HealthBar healthBar;
+    public GameObject reloadBar;
 
     public bool attacking = false;
     public bool facingRight = true;
     public bool playerIsDead = false;
-    public HealthBar healthBar;
+    
 
     private Vector2 movement;
     private float moveSpeed = 5f;
@@ -40,11 +41,10 @@ public class Player : MonoBehaviour
     }
 
 
-
+    
     private void Update()
     {
         playerSpriteRenderer.sortingOrder = (int)(-transform.position.y * 100);
-        weaponSpriteRenderer.sortingOrder = (int)(-transform.position.y * 100 - 25);
 
         if (!playerIsDead)
         {
@@ -60,16 +60,6 @@ public class Player : MonoBehaviour
             {
                 animator.SetBool("Moving", true);
             }
-
-            if (facingRight)
-            {
-                transform.localScale = new Vector3(1, 1, 1);
-
-            }
-            else
-            {
-                transform.localScale = new Vector3(-1, 1, 1);
-            }
         }
     }
 
@@ -79,6 +69,8 @@ public class Player : MonoBehaviour
     {
         if (!playerIsDead)
         {
+            
+
             rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
         }
     }
@@ -219,12 +211,35 @@ public class Player : MonoBehaviour
         invincible = false;
     }
 
+
+    public void ChangeFacingDirection(Transform weaponTransform, float angle, bool facingRight)
+    {
+        this.facingRight = facingRight;
+
+        if (facingRight)
+        {
+            reloadBar.transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(1, 1, 1);
+            weaponTransform.eulerAngles = new Vector3(0, 0, angle);
+        }
+        else
+        {
+            reloadBar.transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-1, 1, 1);
+            weaponTransform.eulerAngles = new Vector3(0, 0, 180 + angle);
+        }
+    }
+
+
+
     IEnumerator PlayDead()
     {
         AudioManager.instance.Stop("BattleMusic");
         yield return new WaitForSeconds(0.1f);
         AudioManager.instance.Play("PlayerDeath");
     }
+
+
 
     private void Die(Collision2D collision)
     {

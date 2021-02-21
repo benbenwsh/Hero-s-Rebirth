@@ -9,6 +9,7 @@ public class Weapon : MonoBehaviour
     public GameObject reloadBar;
     public Camera cam;
     public WeaponSwitching weaponHolder;
+    public SpriteRenderer weaponSpriteRenderer;
 
     private Animator animator;
 
@@ -26,7 +27,6 @@ public class Weapon : MonoBehaviour
         animator = GetComponent<Animator>();
 
         reloadBar.SetActive(false);
-        reloadBar.GetComponent<ReloadBar>().SetMaxTime(reloadTime);
     }
 
 
@@ -38,19 +38,9 @@ public class Weapon : MonoBehaviour
             mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
 
             Vector3 lookDirection = (mousePosition - transform.position).normalized;
-
             float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
 
-            if (lookDirection.x >= 0)
-            {
-                player.facingRight = true;
-                transform.eulerAngles = new Vector3(0, 0, angle);
-            }
-            else
-            {
-                player.facingRight = false;
-                transform.eulerAngles = new Vector3(0, 0, 180 + angle);
-            }
+            player.ChangeFacingDirection(transform, angle, lookDirection.x >= 0);
 
             //  Attack animation
             if (Input.GetMouseButtonDown(0) && !weaponHolder.reloading)
@@ -62,18 +52,11 @@ public class Weapon : MonoBehaviour
 
         if (weaponHolder.reloading)
         {
-            if (player.facingRight)
-            {
-                reloadBar.transform.localScale = new Vector3(1, 1, 1);
-            }
-            else
-            {
-                reloadBar.transform.localScale = new Vector3(-1, 1, 1);
-            }
-
             timeReloaded += Time.deltaTime;
             reloadBar.GetComponent<ReloadBar>().SetTime(timeReloaded);
         }
+
+        weaponSpriteRenderer.sortingOrder = (int)(-transform.position.y * 100 - 25);
     }
 
 
@@ -85,12 +68,13 @@ public class Weapon : MonoBehaviour
     public IEnumerator Attack()
     {
         timeReloaded = 0;
-        weaponHolder.reloading = true;
+        reloadBar.GetComponent<ReloadBar>().SetMaxTime(reloadTime);
         reloadBar.SetActive(true);
+        weaponHolder.reloading = true;
 
         yield return new WaitForSeconds(reloadTime);
 
-        reloadBar.SetActive(false);
         weaponHolder.reloading = false;
+        reloadBar.SetActive(false);
     }
 }
