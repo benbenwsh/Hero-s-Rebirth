@@ -18,6 +18,7 @@ Rogue-like Dungeon crawler game
   * Weapon upgrading
   * Player unlocking
   * How-to-play page
+  * Weapon list (show all weapons and their relationships/upgrades)
 
 ### Today
 1. Switching weapon
