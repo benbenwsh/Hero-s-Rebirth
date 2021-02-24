@@ -20,6 +20,7 @@ Rogue-like Dungeon crawler game
   * How-to-play page
   * Weapon list (show all weapons and their relationships/upgrades)
   * Add (4/5) to health bar
+  * Change images from split to tile
 
 ### Today
 1. Switching weapon
