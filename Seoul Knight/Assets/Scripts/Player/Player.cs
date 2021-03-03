@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public Camera cam;
     public Rigidbody2D rb;
     public Animator animator;
     public Material material;
@@ -26,6 +27,7 @@ public class Player : MonoBehaviour
     private Color flashColour = new Color(255, 255, 255, 0);
     private Color normalColour = new Color(255, 255, 255, 255);
     private bool firstRoom = true;
+    private Vector3 mousePosition;
 
 
 
@@ -212,9 +214,14 @@ public class Player : MonoBehaviour
     }
 
 
-    public void ChangeFacingDirection(Transform weaponTransform, float angle, bool facingRight)
+    public void ChangeFacingDirection(Transform weaponTransform)
     {
-        this.facingRight = facingRight;
+        mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        Vector3 lookDirection = (mousePosition - transform.position).normalized;
+        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
+
+        this.facingRight = lookDirection.x >= 0;
 
         if (facingRight)
         {

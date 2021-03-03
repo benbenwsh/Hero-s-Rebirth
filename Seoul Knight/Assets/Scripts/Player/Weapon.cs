@@ -5,13 +5,13 @@ using System;
 
 public class Weapon : MonoBehaviour
 {
-    public Player player;
-    public GameObject reloadBar;
-    public Camera cam;
-    public WeaponSwitching weaponHolder;
-    public SpriteRenderer weaponSpriteRenderer;
+    private Player player;
+    
+    private SpriteRenderer weaponSpriteRenderer;
 
     private Animator animator;
+    private GameObject reloadBar;
+    private WeaponSwitching weaponHolder;
 
     public int damage;
     public int knockbackMultipler;
@@ -20,13 +20,19 @@ public class Weapon : MonoBehaviour
     private Vector3 mousePosition;
     private float timeReloaded;
 
-
+    private void Awake()
+    {
+        reloadBar = GameObject.Find("Reload Bar");
+    }
 
     private void Start()
     {
+        player = GameObject.Find("Player").GetComponent<Player>();
         animator = GetComponent<Animator>();
-
-        reloadBar.SetActive(false);
+        
+        weaponHolder = transform.parent.gameObject.GetComponent<WeaponSwitching>();
+        weaponSpriteRenderer = transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
+        //reloadBar.SetActive(false);
     }
 
 
@@ -35,12 +41,7 @@ public class Weapon : MonoBehaviour
     {
         if (animator.GetCurrentAnimatorClipInfo(0).Length == 0)
         {
-            mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
-
-            Vector3 lookDirection = (mousePosition - transform.position).normalized;
-            float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
-
-            player.ChangeFacingDirection(transform, angle, lookDirection.x >= 0);
+            player.ChangeFacingDirection(transform);
 
             //  Attack animation
             if (Input.GetMouseButtonDown(0) && !weaponHolder.reloading)

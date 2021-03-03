@@ -1,32 +1,31 @@
 ﻿<Properties StartupConfiguration="{B5F0B553-A3D7-D8B5-83FC-15CC5497BE5D}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/WeaponSwitching.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/Player.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player/Player.cs" Line="221" Column="13" />
+      <File FileName="Assets/Scripts/Player/Player.cs" Line="218" Column="6" />
       <File FileName="Assets/Scripts/Enemy/Enemy.cs" />
       <File FileName="Assets/Scripts/Enemy/EnemyAI.cs" />
       <File FileName="Assets/Scripts/Menu/GameOverMenu.cs" />
       <File FileName="Assets/Scripts/Menu/MainMenuButtons.cs" />
       <File FileName="Assets/Scripts/HealthBar.cs" />
       <File FileName="Assets/Scripts/Room/RoomController.cs" />
-      <File FileName="Assets/Scripts/Room/Room.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Player/Weapon.cs" Line="5" Column="29" />
-      <File FileName="Assets/Scripts/Player/WeaponMovement.cs" Line="59" Column="9" />
-      <File FileName="Assets/Scripts/Player/WeaponSwitching.cs" Line="12" Column="1" />
+      <File FileName="Assets/Scripts/Room/Room.cs" />
+      <File FileName="Assets/Scripts/Player/Weapon.cs" Line="18" Column="29" />
+      <File FileName="Assets/Scripts/Player/WeaponSwitching.cs" />
+      <File FileName="Assets/Scripts/CharacterCustomisation.cs" />
+      <File FileName="Assets/Scripts/CameraController.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Seoul Knight" expanded="True">
-            <Node name="Assets" expanded="True">
+            <Node name="Assets" expanded="True" selected="True">
               <Node name="AstarPathfindingProject" expanded="True">
                 <Node name="Core" expanded="True" />
               </Node>
               <Node name="Scripts" expanded="True">
                 <Node name="Enemy" expanded="True" />
                 <Node name="Menu" expanded="True" />
-                <Node name="Player" expanded="True">
-                  <Node name="WeaponSwitching.cs" selected="True" />
-                </Node>
+                <Node name="Player" expanded="True" />
                 <Node name="Room" expanded="True" />
                 <Node name="Story" expanded="True" />
               </Node>
@@ -38,7 +37,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e88aa370-68a3-4d39-b550-8239da6d2966" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0d220e18-3296-48e6-a418-a5280372850f" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

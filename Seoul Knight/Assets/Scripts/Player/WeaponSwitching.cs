@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class WeaponSwitching : MonoBehaviour
 {
-    public bool reloading = false;
+    public GameObject reloadBar;
 
+    public bool reloading = false;
     private int selectedWeaponIndex = 0;
 
 
 
     private void Start()
     {
+        Instantiate(CharacterCustomisation.broughtWeapons[0], this.transform, false);
+        Instantiate(CharacterCustomisation.broughtWeapons[1], this.transform, false);
+        reloadBar.SetActive(false);
         SelectWeapon();
     }
 

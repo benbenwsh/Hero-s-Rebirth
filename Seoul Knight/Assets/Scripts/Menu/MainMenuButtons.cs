@@ -8,17 +8,21 @@ public class MainMenuButtons : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(3);
+    }
+
+    public void CharacterCustomisation()
+    {
+        SceneManager.LoadScene(2);
     }
 
     public void Story()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene(0);
     }
 
     public void QuitGame()
     {
-        Debug.Log("Quit");
         Application.Quit();
     }
 }
