@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: d6b2674e9c66d416cab7ca25e57d5cdc
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - wallRight: {instanceID: 0}
+  - wallTopRight: {instanceID: 0}
+  - wallLeft: {instanceID: 0}
+  - wallTopLeft: {instanceID: 0}
+  - wallSideFrontLeft: {instanceID: 0}
+  - wallSideFrontRight: {instanceID: 0}
+  - rbTileMap: {instanceID: 0}
+  - coverTileMap: {instanceID: 0}
+  - doorPrefab: {instanceID: 0}
+  - columnPrefab: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
