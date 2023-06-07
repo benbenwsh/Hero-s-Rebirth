@@ -1,7 +1,7 @@
 # Hero's Rebirth
 
 ## Project Overview
-A 2D rogue-like dungeon crawler game built by a team of 4 from Brighton College led by Benjamin Wong. 
+A 2D rogue-like dungeon crawler Unity game built by a team of 4 from Brighton College led by Benjamin Wong. 
 
 ## Game Description
 Embark on an extraordinary medieval adventure as a once-underestimated knight determined to prove their worth. Explore eerie dungeons, battle menacing monsters, and rise as the realm's greatest knight.
