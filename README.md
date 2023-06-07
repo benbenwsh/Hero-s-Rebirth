@@ -1,4 +1,4 @@
-# Hero-s-Rebirth
+# Hero's Rebirth
 
 ## Project Overview
 A 2D rogue-like dungeon crawler game built by a team of 4 from Brighton College led by Benjamin Wong. 
