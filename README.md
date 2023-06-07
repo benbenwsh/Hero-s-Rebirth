@@ -23,5 +23,4 @@ Embark on an extraordinary medieval adventure as a once-underestimated knight de
 
 ## Screenshots
 <img width="1440" alt="knight_and_power_ups" src="https://github.com/benbenwsh/Hero-s-Rebirth/assets/38101123/6c2f4e46-c19e-44f2-8cc4-af33367596e2">
-<img width="1440" alt="Screenshot 2023-06-07 at 15 15 42" src="[https://github.com/benbenwsh/Hero-s-Rebirth/assets/38101123/be00ecf8-93af-4b43-9ef7-ea4ab7346b33](https://github.com/benbenwsh/Hero-s-Rebirth/assets/38101123/b6a0b406-29c1-49ea-8c16-4a2672279483)">
-![knight_attacking_demons](https://github.com/benbenwsh/Hero-s-Rebirth/assets/38101123/b6a0b406-29c1-49ea-8c16-4a2672279483)
+<img width="1440" alt="Screenshot 2023-06-07 at 15 48 27" src="https://github.com/benbenwsh/Hero-s-Rebirth/assets/38101123/fdc0f749-5fdd-4599-abda-c1963faf8c26">
